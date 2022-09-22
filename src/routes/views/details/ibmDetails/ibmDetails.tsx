@@ -183,8 +183,11 @@ class IbmDetails extends React.Component<IbmDetailsProps> {
         onSetPage={this.handleSetPage}
         page={page}
         perPage={limit}
+        titles={{
+          paginationTitle: `${isBottom ? 'bottom' : 'top'} pagination`,
+        }}
         variant={isBottom ? PaginationVariant.bottom : PaginationVariant.top}
-        widgetId="`pagination${isBottom ? '-bottom' : ''}`"
+        widgetId={`pagination${isBottom ? '-bottom' : ''}`}
       />
     );
   };
