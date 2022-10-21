@@ -1052,10 +1052,10 @@
     victory-voronoi-container "^36.6.7"
     victory-zoom-container "^36.6.7"
 
-"@patternfly/react-core@4.252.0", "@patternfly/react-core@^4.250.2":
-  version "4.252.0"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-core/-/react-core-4.252.0.tgz#6144e34419ad0c24bc7e5d74df6ddf164f2b0eb6"
-  integrity sha512-XBxSmVcPR2LPqNRHNpOCNmxmMYvLQCMwcXf/ArEJ79Vt6jwehsZpVMLZmcXimpbT8wS/S7hxkmjvrfumBFs12Q==
+"@patternfly/react-core@4.254.0", "@patternfly/react-core@^4.250.2":
+  version "4.254.0"
+  resolved "https://registry.yarnpkg.com/@patternfly/react-core/-/react-core-4.254.0.tgz#169ed7215439a5861c9f2d078aa63233890a2da6"
+  integrity sha512-iVnTaco6A4Ld4aJQMcpCxBPLU5AYYhytfRlOn+siZCQEkDgVwrY20nNnAJzKF8yYoKUx1gLuR4d5Ta2ZSxp/aQ==
   dependencies:
     "@patternfly/react-icons" "^4.92.8"
     "@patternfly/react-styles" "^4.91.8"
