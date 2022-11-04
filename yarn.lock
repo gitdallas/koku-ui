@@ -971,10 +971,10 @@
     victory-voronoi-container "^36.6.7"
     victory-zoom-container "^36.6.7"
 
-"@patternfly/react-core@4.258.3", "@patternfly/react-core@^4.258.3":
-  version "4.258.3"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-core/-/react-core-4.258.3.tgz#9b5ca051d666dfbb2c1e9d4135bb2449081b06f7"
-  integrity sha512-2l+GWxuIwJinhYoNv4mQdVQOmbDXRdyPIMjBFm/HTKLXxhGLSoIYlgVGy/On/ViaBSZGh5e/I5H74aC8naMGPA==
+"@patternfly/react-core@4.258.4", "@patternfly/react-core@^4.258.3":
+  version "4.258.4"
+  resolved "https://registry.yarnpkg.com/@patternfly/react-core/-/react-core-4.258.4.tgz#3b3096ca47254eb4c271b79f2b43aacae5ee972b"
+  integrity sha512-A/DF/i3mRyB0qTURk30Z+vMexD6HGPsPMkZUVnK9vBEGqSNI8XwNE3GP5Sulvm+yxtd4zzCedx/4+Jer0zCSrg==
   dependencies:
     "@patternfly/react-icons" "^4.92.10"
     "@patternfly/react-styles" "^4.91.10"
