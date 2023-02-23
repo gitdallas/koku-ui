@@ -149,7 +149,7 @@ class GroupByOrgBase extends React.Component<GroupByOrgProps> {
           aria-label={intl.formatMessage(messages.filterByOrgUnitAriaLabel)}
           isDisabled={isDisabled}
           onClear={this.handleGroupByClear}
-          onToggle={this.handleGroupByToggle}
+          onToggle={(e, isOpen) => this.handleGroupByToggle(isOpen)}
           onSelect={this.handleGroupBySelected}
           isOpen={isGroupByOpen}
           placeholderText={intl.formatMessage(messages.filterByOrgUnitPlaceholder)}

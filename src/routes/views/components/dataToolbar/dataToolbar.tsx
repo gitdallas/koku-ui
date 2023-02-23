@@ -363,7 +363,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps> {
                 }}
               />,
             ]}
-            onToggle={this.handleOnBulkSelectToggle}
+            onToggle={(e, isOpen) => this.handleOnBulkSelectToggle(isOpen)}
           >
             {numSelected !== 0 && (
               <React.Fragment>{intl.formatMessage(messages.selected, { value: numSelected })}</React.Fragment>
@@ -416,7 +416,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps> {
           isDisabled={isDisabled}
           isOpen={isCategorySelectOpen}
           onSelect={this.handleOnCategorySelect}
-          onToggle={this.handleOnCategoryToggle}
+          onToggle={(e, isOpen) => this.handleOnCategoryToggle(isOpen)}
           selections={selection}
           toggleIcon={<FilterIcon />}
           variant={SelectVariant.single}
@@ -593,7 +593,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps> {
           isDisabled={isDisabled}
           isOpen={isExcludeSelectOpen}
           onSelect={this.handleOnExcludeSelect}
-          onToggle={this.handleOnExcludeToggle}
+          onToggle={(e, isOpen) => this.handleOnExcludeToggle(isOpen)}
           selections={selection}
           variant={SelectVariant.single}
         >
@@ -683,7 +683,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps> {
           className="selectOverride"
           variant={SelectVariant.checkbox}
           aria-label={intl.formatMessage(messages.filterByOrgUnitAriaLabel)}
-          onToggle={this.handleOnOrgUnitToggle}
+          onToggle={(e, isOpen) => this.handleOnOrgUnitToggle(isOpen)}
           onSelect={this.handleOnOrgUnitSelect}
           selections={selections}
           isOpen={isOrgUnitSelectExpanded}
@@ -798,7 +798,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps> {
           variant={SelectVariant.typeahead}
           typeAheadAriaLabel={intl.formatMessage(messages.filterByTagKeyAriaLabel)}
           onClear={this.handleOnTagKeyClear}
-          onToggle={this.handleOnTagKeyToggle}
+          onToggle={(e, isOpen) => this.handleOnTagKeyToggle(isOpen)}
           onSelect={this.handleOnTagKeySelect}
           isOpen={isTagKeySelectExpanded}
           placeholderText={intl.formatMessage(messages.filterByTagKeyPlaceholder)}

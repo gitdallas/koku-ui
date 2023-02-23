@@ -63,7 +63,7 @@ class DataKebabBase extends React.Component<DataKebabProps> {
         isPlain
         onSelect={this.handleOnSelect}
         position={DropdownPosition.right}
-        toggle={<KebabToggle isDisabled={isDisabled} onToggle={this.handleOnToggle} />}
+        toggle={<KebabToggle isDisabled={isDisabled} onToggle={(e, isOpen) => this.handleOnToggle(isOpen)} />}
       />
     );
   }

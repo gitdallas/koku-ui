@@ -61,7 +61,7 @@ class ExportsActionsBase extends React.Component<ExportsActionsProps> {
       <>
         <Dropdown
           onSelect={this.handleOnSelect}
-          toggle={<KebabToggle onToggle={this.handleOnToggle} />}
+          toggle={<KebabToggle onToggle={(e, isOpen) => this.handleOnToggle(isOpen)} />}
           isOpen={isDropdownOpen}
           isPlain
           position="right"

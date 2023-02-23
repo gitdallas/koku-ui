@@ -55,7 +55,7 @@ const DistributionCardBase: React.FC<Props> = ({
           </CardHeaderMain>
           <CardActions>
             <Dropdown
-              toggle={<KebabToggle onToggle={setDropdownIsOpen} />}
+              toggle={<KebabToggle onToggle={(e, isOpen) => setDropdownIsOpen(isOpen)} />}
               isOpen={dropdownIsOpen}
               onSelect={() => setDropdownIsOpen(false)}
               position={DropdownPosition.right}

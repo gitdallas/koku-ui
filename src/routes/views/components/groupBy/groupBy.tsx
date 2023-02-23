@@ -205,7 +205,7 @@ class GroupByBase extends React.Component<GroupByProps> {
         isDisabled={isDisabled}
         isOpen={isGroupByOpen}
         onSelect={this.handleGroupBySelected}
-        onToggle={this.handleGroupByToggle}
+        onToggle={(e, isOpen) => this.handleGroupByToggle(isOpen)}
         selections={selection}
         variant={SelectVariant.single}
       >

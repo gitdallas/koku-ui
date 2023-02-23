@@ -70,7 +70,7 @@ class CostTypeBase extends React.Component<CostTypeProps> {
         isDisabled={isDisabled}
         isOpen={isSelectOpen}
         onSelect={this.handleSelect}
-        onToggle={this.handleToggle}
+        onToggle={(e, isOpen) => this.handleToggle(isOpen)}
         selections={selection}
         variant={SelectVariant.single}
       >
