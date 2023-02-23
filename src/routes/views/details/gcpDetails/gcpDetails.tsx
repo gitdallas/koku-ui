@@ -195,7 +195,7 @@ class GcpDetails extends React.Component<GcpDetailsProps> {
         page={page}
         perPage={limit}
         titles={{
-          paginationTitle: intl.formatMessage(messages.paginationTitle, {
+          paginationAriaLabel: intl.formatMessage(messages.paginationTitle, {
             title: intl.formatMessage(messages.gcp),
             placement: isBottom ? 'bottom' : 'top',
           }),

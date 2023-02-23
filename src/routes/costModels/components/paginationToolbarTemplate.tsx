@@ -31,7 +31,7 @@ export const PaginationToolbarTemplateBase: React.FC<PaginationToolbarTemplatePr
             onSetPage={onSetPage}
             onPerPageSelect={onPerPageSelect}
             titles={{
-              paginationTitle: intl.formatMessage(messages.paginationTitle, {
+              paginationAriaLabel: intl.formatMessage(messages.paginationTitle, {
                 title: intl.formatMessage(messages.createCostModelTitle),
                 placement: 'bottom',
               }),

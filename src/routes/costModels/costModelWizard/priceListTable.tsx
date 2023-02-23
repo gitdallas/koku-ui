@@ -160,8 +160,8 @@ class PriceListTable extends React.Component<Props, State> {
                           this.state.sortBy.index === 1
                             ? (r: Rate) => getMetric(r.metric.label_metric)
                             : this.state.sortBy.index === 2
-                            ? (r: Rate) => getMeasurement(r.metric.label_measurement, r.metric.label_measurement_unit)
-                            : () => '';
+                              ? (r: Rate) => getMeasurement(r.metric.label_measurement, r.metric.label_measurement_unit)
+                              : () => '';
                         return compareBy(r1, r2, this.state.sortBy.direction, projection);
                       });
                     const res = filtered.slice(from, to);
@@ -227,7 +227,7 @@ class PriceListTable extends React.Component<Props, State> {
                               onSetPage={priceListPagination.onPageSet}
                               onPerPageSelect={priceListPagination.onPerPageSet}
                               titles={{
-                                paginationTitle: intl.formatMessage(messages.paginationTitle, {
+                                paginationAriaLabel: intl.formatMessage(messages.paginationTitle, {
                                   title: intl.formatMessage(messages.costModelsAssignSourcesParen),
                                   placement: 'top',
                                 }),
@@ -272,7 +272,7 @@ class PriceListTable extends React.Component<Props, State> {
                           onSetPage={priceListPagination.onPageSet}
                           onPerPageSelect={priceListPagination.onPerPageSet}
                           titles={{
-                            paginationTitle: intl.formatMessage(messages.paginationTitle, {
+                            paginationAriaLabel: intl.formatMessage(messages.paginationTitle, {
                               title: intl.formatMessage(messages.costModelsAssignSourcesParen),
                               placement: 'bottom',
                             }),
