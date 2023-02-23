@@ -79,7 +79,7 @@ const CostModelsFilterSelectorBase: React.FC<CostModelsFilterSelectorProps> = ({
         updateFilterType(value);
         setIsOpen(false);
       }}
-      onToggle={(e, isOpen) => setIsOpen(isOpen)}
+      onToggle={(e, selectIsOpen) => setIsOpen(selectIsOpen)}
       selections={filterType}
       toggleIcon={<FilterIcon />}
       variant={SelectVariant.single}
