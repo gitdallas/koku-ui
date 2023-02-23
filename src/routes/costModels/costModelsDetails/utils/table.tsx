@@ -94,7 +94,7 @@ export function createActions(stateName: string, canWrite: boolean, actions: IAc
       ...action,
       isDisabled: !canWrite,
       style: !canWrite ? { pointerEvents: 'auto' } : undefined,
-      tooltip: !canWrite ? action.tooltip : undefined,
+      // tooltip: !canWrite ? action.tooltip : undefined,
     };
   });
 }

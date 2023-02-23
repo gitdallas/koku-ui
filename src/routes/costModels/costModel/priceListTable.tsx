@@ -308,9 +308,9 @@ class PriceListTable extends React.Component<Props, State> {
                           isDisabled: !isWritePermission,
                           // HACK: to display tooltip on disable
                           style: !isWritePermission ? { pointerEvents: 'auto' } : undefined,
-                          tooltip: !isWritePermission ? (
-                            <div>{intl.formatMessage(messages.costModelsReadOnly)}</div>
-                          ) : undefined,
+                          // tooltip: !isWritePermission ? (
+                          //   <div>{intl.formatMessage(messages.costModelsReadOnly)}</div>
+                          // ) : undefined,
                           onClick: (_evt, _rowIndex, rowData) => {
                             this.setState({
                               deleteRate: null,
@@ -327,9 +327,9 @@ class PriceListTable extends React.Component<Props, State> {
                           isDisabled: !isWritePermission,
                           // HACK: to display tooltip on disable
                           style: !isWritePermission ? { pointerEvents: 'auto' } : {},
-                          tooltip: !isWritePermission ? (
-                            <div>{intl.formatMessage(messages.costModelsReadOnly)}</div>
-                          ) : undefined,
+                          // tooltip: !isWritePermission ? (
+                          //   <div>{intl.formatMessage(messages.costModelsReadOnly)}</div>
+                          // ) : undefined,
                           onClick: (_evt, _rowIndex, rowData) => {
                             const rowIndex = rowData.data.stateIndex;
                             this.setState({
