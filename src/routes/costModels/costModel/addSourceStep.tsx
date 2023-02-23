@@ -123,7 +123,8 @@ class AddSourcesStep extends React.Component<AddSourcesStepProps> {
                 name: this.props.query.name ? this.props.query.name.split(',') : [],
               })(category, chip);
               this.props.fetch(
-                `source_type=${source_type}${newQuery.name ? `&name=${newQuery.name.join(',')}` : ''}&offset=0&limit=${this.props.pagination.perPage
+                `source_type=${source_type}${newQuery.name ? `&name=${newQuery.name.join(',')}` : ''}&offset=0&limit=${
+                  this.props.pagination.perPage
                 }`
               );
             },
@@ -143,7 +144,8 @@ class AddSourcesStep extends React.Component<AddSourcesStepProps> {
               const curQuery = this.props.query.name ? this.props.query.name.split(',') : [];
               const newQuery = addMultiValueQuery({ name: curQuery })('name', this.props.currentFilter.value);
               this.props.fetch(
-                `source_type=${source_type}&name=${newQuery.name.join(',')}&limit=${this.props.pagination.perPage
+                `source_type=${source_type}&name=${newQuery.name.join(',')}&limit=${
+                  this.props.pagination.perPage
                 }&offset=0`
               );
             },
@@ -155,13 +157,15 @@ class AddSourcesStep extends React.Component<AddSourcesStepProps> {
             page: this.props.pagination.page,
             onPerPageSelect: (_evt, newPerPage) => {
               this.props.fetch(
-                `source_type=${source_type}&limit=${newPerPage}&offset=0&${this.props.query.name ? `name=${this.props.query.name}` : ''
+                `source_type=${source_type}&limit=${newPerPage}&offset=0&${
+                  this.props.query.name ? `name=${this.props.query.name}` : ''
                 }`
               );
             },
             onSetPage: (_evt, newPage) => {
               this.props.fetch(
-                `source_type=${source_type}&limit=${this.props.pagination.perPage}&offset=${this.props.pagination.perPage * (newPage - 1)
+                `source_type=${source_type}&limit=${this.props.pagination.perPage}&offset=${
+                  this.props.pagination.perPage * (newPage - 1)
                 }&${this.props.query.name ? `name=${this.props.query.name}` : ''}`
               );
             },
@@ -224,7 +228,8 @@ class AddSourcesStep extends React.Component<AddSourcesStepProps> {
                 }}
                 onSetPage={(_evt, newPage) => {
                   this.props.fetch(
-                    `limit=${this.props.pagination.perPage}&offset=${this.props.pagination.perPage * (newPage - 1)}&${this.props.query.name ? `name=${this.props.query.name}` : ''
+                    `limit=${this.props.pagination.perPage}&offset=${this.props.pagination.perPage * (newPage - 1)}&${
+                      this.props.query.name ? `name=${this.props.query.name}` : ''
                     }`
                   );
                 }}
