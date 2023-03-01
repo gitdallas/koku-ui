@@ -67,7 +67,7 @@
     "redux-thunk": "^2.4.2",
     "typesafe-actions": "^5.1.0",
     "unleash-proxy-client": "^2.4.3",
-    "victory-core": "36.6.7",
+    "victory-core": "36.6.8",
     "xstate": "^4.36.0"
   },
   "devDependencies": {
