@@ -98,7 +98,7 @@ const SourcesTable: React.FC<WrappedComponentProps> = ({ intl }) => {
                       <Tr key={rowIndex}>
                         <Td>
                           <Checkbox
-                            onChange={isChecked => {
+                            onChange={(_event, isChecked) => {
                               onSourceSelect(rowIndex, isChecked);
                             }}
                             id={row.name}

@@ -1,4 +1,8 @@
-import { Dropdown, DropdownItem, KebabToggle } from '@patternfly/react-core';
+import {
+	Dropdown as DropdownDeprecated,
+	DropdownItem as DropdownItemDeprecated,
+	KebabToggle as KebabToggleDeprecated
+} from '@patternfly/react-core/deprecated';
 import messages from 'locales/messages';
 import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';
@@ -52,16 +56,16 @@ class ExportsActionsBase extends React.Component<ExportsActionsProps, ExportsAct
     const { isDropdownOpen } = this.state;
 
     const items = [
-      <DropdownItem component="button" isDisabled={isDisabled} key="export-action" onClick={this.handleOnDelete}>
+      <DropdownItemDeprecated component="button" isDisabled={isDisabled} key="export-action" onClick={this.handleOnDelete}>
         {intl.formatMessage(messages.delete)}
-      </DropdownItem>,
+      </DropdownItemDeprecated>,
     ];
 
     return (
       <>
-        <Dropdown
+        <DropdownDeprecated
           onSelect={this.handleOnSelect}
-          toggle={<KebabToggle onToggle={this.handleOnToggle} />}
+          toggle={<KebabToggleDeprecated onToggle={this.handleOnToggle} />}
           isOpen={isDropdownOpen}
           isPlain
           position="right"

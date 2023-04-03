@@ -1,14 +1,16 @@
 import type { ToolbarProps } from '@patternfly/react-core';
 import {
-  Dropdown,
-  DropdownItem,
-  DropdownToggle,
-  InputGroup,
-  InputGroupText,
-  TextInput,
-  Toolbar,
-  ToolbarFilter,
+	InputGroup,
+	InputGroupText,
+	TextInput,
+	Toolbar,
+	ToolbarFilter
 } from '@patternfly/react-core';
+import {
+	Dropdown as DropdownDeprecated,
+	DropdownItem as DropdownItemDeprecated,
+	DropdownToggle as DropdownToggleDeprecated
+} from '@patternfly/react-core/deprecated';
 import { SearchIcon } from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import { intl as defaultIntl } from 'components/i18n';
 import messages from 'locales/messages';
@@ -295,29 +297,29 @@ const SourceTypeFilterBase: React.FC<SourceTypeFilterProps> = ({
     router.navigate(stringifySearch({ ...initialCostModelsQuery, ...query, source_type: source }));
   const children =
     filterType === 'sourceType' ? (
-      <Dropdown
+      <DropdownDeprecated
         onSelect={onSelect(id, setIsOpen)}
         isOpen={isOpen}
         toggle={
-          <DropdownToggle
+          <DropdownToggleDeprecated
             onToggle={(value: boolean) => {
               setIsOpen(value);
             }}
             id={id}
           >
             {intl.formatMessage(messages.filterByPlaceholder, { value: 'source_type' })}
-          </DropdownToggle>
+          </DropdownToggleDeprecated>
         }
         dropdownItems={[
-          <DropdownItem key="aws" component="button" onClick={() => onFilter('aws')}>
+          <DropdownItemDeprecated key="aws" component="button" onClick={() => onFilter('aws')}>
             {intl.formatMessage(messages.aws)}
-          </DropdownItem>,
-          <DropdownItem key="azure" component="button" onClick={() => onFilter('azure')}>
+          </DropdownItemDeprecated>,
+          <DropdownItemDeprecated key="azure" component="button" onClick={() => onFilter('azure')}>
             {intl.formatMessage(messages.azure)}
-          </DropdownItem>,
-          <DropdownItem key="ocp" component="button" onClick={() => onFilter('ocp')}>
+          </DropdownItemDeprecated>,
+          <DropdownItemDeprecated key="ocp" component="button" onClick={() => onFilter('ocp')}>
             {intl.formatMessage(messages.openShift)}
-          </DropdownItem>,
+          </DropdownItemDeprecated>,
         ]}
       />
     ) : null;

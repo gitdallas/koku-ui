@@ -8,7 +8,7 @@ import {
   Stack,
   StackItem,
   Title,
-  TitleSizes,
+  TitleSizes, EmptyStateHeader, EmptyStateFooter,
 } from '@patternfly/react-core';
 import { ExclamationCircleIcon } from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import global_DangerColor_100 from '@patternfly/react-tokens/dist/js/global_danger_color_100';
@@ -31,17 +31,14 @@ type ErrorStateProps = ErrorEmptyProps & OwnProps;
 export const ErrorState: React.FC<ErrorStateProps> = ({ variant, actionButton, title, description }) => {
   return (
     <EmptyState variant={variant}>
-      <EmptyStateIcon icon={ExclamationCircleIcon} color={global_DangerColor_100.value} />
-      <Title headingLevel="h4" size="lg">
-        {title}
-      </Title>
+      <EmptyStateHeader titleText={<>{title}</>} icon={<EmptyStateIcon icon={ExclamationCircleIcon} color={global_DangerColor_100.value} />} headingLevel="h4" />
       <EmptyStateBody>
         <Stack>
           <StackItem>{description}</StackItem>
         </Stack>
-      </EmptyStateBody>
+      </EmptyStateBody><EmptyStateFooter>
       {actionButton}
-    </EmptyState>
+    </EmptyStateFooter></EmptyState>
   );
 };
 
@@ -68,7 +65,7 @@ export const SourceStepErrorStateBase: React.FC<SourcesErrorStateProps> = ({ int
       </StackItem>
       <StackItem>
         <ErrorState
-          variant={EmptyStateVariant.large}
+          variant={EmptyStateVariant.lg}
           actionButton={actionButton}
           description={description}
           title={title}
@@ -108,7 +105,7 @@ export const SourcesModalErrorStateBase: React.FC<SourcesModalErrorProps> = ({ i
   });
   const actionButton = <Button onClick={onRefresh}>{intl.formatMessage(messages.costModelsRefreshDialog)}</Button>;
   return (
-    <ErrorState variant={EmptyStateVariant.large} actionButton={actionButton} description={description} title={title} />
+    <ErrorState variant={EmptyStateVariant.lg} actionButton={actionButton} description={description} title={title} />
   );
 };
 

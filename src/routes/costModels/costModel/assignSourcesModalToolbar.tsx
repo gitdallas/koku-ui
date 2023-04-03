@@ -83,7 +83,7 @@ export const AssignSourcesToolbarBase: React.FC<AssignSourcesToolbarBaseProps> =
             page={paginationProps.page}
             perPage={paginationProps.perPage}
             titles={{
-              paginationTitle: intl.formatMessage(messages.paginationTitle, {
+              paginationAriaLabel: intl.formatMessage(messages.paginationTitle, {
                 title: intl.formatMessage(messages.costModelsAssignSourcesParen),
                 placement: 'top',
               }),

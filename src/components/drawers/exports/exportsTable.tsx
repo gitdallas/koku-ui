@@ -8,7 +8,7 @@ import {
   Label,
   Popover,
   Spinner,
-  Title,
+  Title, EmptyStateHeader, EmptyStateFooter,
 } from '@patternfly/react-core';
 import { DownloadIcon } from '@patternfly/react-icons/dist/esm/icons/download-icon';
 import { ExclamationCircleIcon } from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
@@ -168,15 +168,12 @@ class ExportsTableBase extends React.Component<ExportsTableProps, ExportsTableSt
 
     return (
       <EmptyState>
-        <EmptyStateIcon icon={PlusCircleIcon} />
-        <Title headingLevel="h5" size="lg">
-          {intl.formatMessage(messages.noExportsStateTitle)}
-        </Title>
-        <EmptyStateBody>{intl.formatMessage(messages.exportsEmptyState)}</EmptyStateBody>
+        <EmptyStateHeader titleText={<>{intl.formatMessage(messages.noExportsStateTitle)}</>} icon={<EmptyStateIcon icon={PlusCircleIcon} />} headingLevel="h5" />
+        <EmptyStateBody>{intl.formatMessage(messages.exportsEmptyState)}</EmptyStateBody><EmptyStateFooter>
         <Button variant="primary" onClick={onClose}>
           {intl.formatMessage(messages.close)}
         </Button>
-      </EmptyState>
+      </EmptyStateFooter></EmptyState>
     );
   };
 

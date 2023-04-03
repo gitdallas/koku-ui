@@ -1,5 +1,10 @@
 import type { MessageDescriptor } from '@formatjs/intl/src/types';
-import { Dropdown, DropdownItem, DropdownPosition, KebabToggle } from '@patternfly/react-core';
+import {
+	Dropdown as DropdownDeprecated,
+	DropdownItem as DropdownItemDeprecated,
+	DropdownPosition as DropdownPositionDeprecated,
+	KebabToggle as KebabToggleDeprecated
+} from '@patternfly/react-core/deprecated';
 import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';
 import { injectIntl } from 'react-intl';
@@ -31,9 +36,9 @@ class DataKebabBase extends React.Component<DataKebabProps, DataKebabState> {
 
     options.map((option, index) => {
       dropdownItems.push(
-        <DropdownItem key={index} onClick={option.onClick}>
+        <DropdownItemDeprecated key={index} onClick={option.onClick}>
           {intl.formatMessage(option.label)}
-        </DropdownItem>
+        </DropdownItemDeprecated>
       );
     });
     return dropdownItems;
@@ -57,13 +62,13 @@ class DataKebabBase extends React.Component<DataKebabProps, DataKebabState> {
     const { isKebabOpen } = this.state;
 
     return (
-      <Dropdown
+      <DropdownDeprecated
         dropdownItems={this.getDropdownItems()}
         isOpen={isKebabOpen}
         isPlain
         onSelect={this.handleOnSelect}
-        position={DropdownPosition.right}
-        toggle={<KebabToggle isDisabled={isDisabled} onToggle={this.handleOnToggle} />}
+        position={DropdownPositionDeprecated.right}
+        toggle={<KebabToggleDeprecated isDisabled={isDisabled} onToggle={this.handleOnToggle} />}
       />
     );
   }
