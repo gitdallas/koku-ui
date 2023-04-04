@@ -139,7 +139,7 @@ class GroupByTagBase extends React.Component<GroupByTagProps, GroupByTagState> {
           aria-label={intl.formatMessage(messages.filterByTagKeyAriaLabel)}
           isDisabled={isDisabled}
           onClear={this.handleGroupByClear}
-          onToggle={this.handleGroupByToggle}
+          onToggle={(_event, isOpen) => this.handleGroupByToggle(isOpen)}
           onSelect={this.handleGroupBySelected}
           isOpen={isGroupByOpen}
           placeholderText={intl.formatMessage(messages.filterByTagKeyPlaceholder)}

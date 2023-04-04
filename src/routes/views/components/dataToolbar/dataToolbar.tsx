@@ -437,7 +437,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
           isDisabled={isDisabled && !hasFilters}
           isOpen={isCategorySelectOpen}
           onSelect={this.handleOnCategorySelect}
-          onToggle={this.handleOnCategoryToggle}
+          onToggle={(_event, isOpen) => this.handleOnCategoryToggle(isOpen)}
           selections={selection}
           toggleIcon={<FilterIcon />}
           variant={SelectVariant.single}
@@ -629,7 +629,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
           isDisabled={isDisabled && !hasFilters}
           isOpen={isExcludeSelectOpen}
           onSelect={this.handleOnExcludeSelect}
-          onToggle={this.handleOnExcludeToggle}
+          onToggle={(_event, isOpen) => this.handleOnExcludeToggle(isOpen)}
           selections={selection}
           variant={SelectVariant.single}
         >
@@ -719,7 +719,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
           className="selectOverride"
           variant={SelectVariant.checkbox}
           aria-label={intl.formatMessage(messages.filterByOrgUnitAriaLabel)}
-          onToggle={this.handleOnOrgUnitToggle}
+          onToggle={(_event, isOpen) => this.handleOnOrgUnitToggle(isOpen)}
           onSelect={this.handleOnOrgUnitSelect}
           selections={selections}
           isOpen={isOrgUnitSelectExpanded}
@@ -834,7 +834,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
           variant={SelectVariant.typeahead}
           typeAheadAriaLabel={intl.formatMessage(messages.filterByTagKeyAriaLabel)}
           onClear={this.handleOnTagKeyClear}
-          onToggle={this.handleOnTagKeyToggle}
+          onToggle={(_event, isOpen) => this.handleOnTagKeyToggle(isOpen)}
           onSelect={this.handleOnTagKeySelect}
           isOpen={isTagKeySelectExpanded}
           placeholderText={intl.formatMessage(messages.filterByTagKeyPlaceholder)}

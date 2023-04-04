@@ -79,7 +79,7 @@ class CurrencyBase extends React.Component<CurrencyProps, CurrencyState> {
         isDisabled={isDisabled}
         isOpen={isSelectOpen}
         onSelect={this.handleSelect}
-        onToggle={this.handleToggle}
+        onToggle={ (_event, value) => this.handleToggle(value) }
         selections={selection}
         variant={SelectVariant.single}
       >

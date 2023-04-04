@@ -74,7 +74,7 @@ class PerspectiveSelectBase extends React.Component<PerspectiveSelectProps, Pers
         isDisabled={isDisabled}
         isOpen={isSelectOpen}
         onSelect={this.handleSelect}
-        onToggle={this.handleToggle}
+        onToggle={(_event, isOpen) => this.handleToggle(isOpen)}
         selections={selection}
         variant={SelectVariant.single}
       >

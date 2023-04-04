@@ -166,7 +166,7 @@ class TagValueBase extends React.Component<TagValueProps, TagValueState> {
         isDisabled={isDisabled}
         variant={SelectVariant.checkbox}
         aria-label={intl.formatMessage(messages.filterByTagValueAriaLabel)}
-        onToggle={this.onTagValueToggle}
+        onToggle={(_event, isOpen) => this.onTagValueToggle(isOpen)}
         onSelect={onTagValueSelect}
         selections={selections}
         isOpen={isTagValueExpanded}
