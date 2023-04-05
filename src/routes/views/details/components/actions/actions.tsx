@@ -129,7 +129,7 @@ class DetailsActionsBase extends React.Component<DetailsActionsProps, DetailsAct
       <>
         <DropdownDeprecated
           onSelect={this.handleOnSelect}
-          toggle={<KebabToggleDeprecated onToggle={this.handleOnToggle} />}
+          toggle={<KebabToggleDeprecated onToggle={(_event, isOpen) => this.handleOnToggle(isOpen)} />}
           isOpen={this.state.isDropdownOpen}
           isPlain
           position="right"

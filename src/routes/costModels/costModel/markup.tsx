@@ -50,7 +50,7 @@ const MarkupCardBase: React.FC<Props> = ({
       {isUpdateDialogOpen && <UpdateMarkupDialog current={current} />}
       <Card style={styles.card}>
         <CardHeader actions={{ actions: <><DropdownDeprecated
-              toggle={<KebabToggleDeprecated onToggle={setDropdownIsOpen} />}
+              toggle={<KebabToggleDeprecated onToggle={(_event, isOpen) => setDropdownIsOpen(isOpen)} />}
               isOpen={dropdownIsOpen}
               onSelect={() => setDropdownIsOpen(false)}
               position={DropdownPositionDeprecated.right}

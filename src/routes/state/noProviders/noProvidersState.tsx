@@ -1,5 +1,5 @@
 import type { MessageDescriptor } from '@formatjs/intl/src/types';
-import { Button, EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStateVariant, Title, EmptyStateHeader, EmptyStateFooter } from '@patternfly/react-core';
+import { Button, EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStateVariant, EmptyStateHeader, EmptyStateFooter } from '@patternfly/react-core';
 import { ExternalLinkAltIcon } from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import { PlusCircleIcon } from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import { ProviderType } from 'api/providers';

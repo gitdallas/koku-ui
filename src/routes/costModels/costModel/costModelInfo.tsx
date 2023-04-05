@@ -6,8 +6,7 @@ import {
   GridItem,
   PageSection,
   TabContent,
-  Title,
-  TitleSizes, EmptyStateHeader, EmptyStateFooter,
+  EmptyStateHeader,
 } from '@patternfly/react-core';
 import { ErrorCircleOIcon } from '@patternfly/react-icons/dist/esm/icons/error-circle-o-icon';
 import { PageHeader, PageHeaderTitle } from '@redhat-cloud-services/frontend-components/PageHeader';

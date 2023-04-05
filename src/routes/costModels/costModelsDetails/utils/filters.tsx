@@ -302,7 +302,7 @@ const SourceTypeFilterBase: React.FC<SourceTypeFilterProps> = ({
         isOpen={isOpen}
         toggle={
           <DropdownToggleDeprecated
-            onToggle={(value: boolean) => {
+            onToggle={(_event, value: boolean) => {
               setIsOpen(value);
             }}
             id={id}

@@ -209,7 +209,6 @@ class OptimizationsContentBase extends React.Component<OptimizationsContentProps
       <TableComposable
         aria-label={intl.formatMessage(messages.recommendationsTableAriaLabel)}
         borders={false}
-        hasSelectableRowCaption
         variant={TableVariant.compact}
       >
         <Thead>
@@ -290,7 +289,6 @@ class OptimizationsContentBase extends React.Component<OptimizationsContentProps
       <TableComposable
         aria-label={intl.formatMessage(messages.recommendationsTableAriaLabel)}
         borders={false}
-        hasSelectableRowCaption
         variant={TableVariant.compact}
       >
         <Thead>

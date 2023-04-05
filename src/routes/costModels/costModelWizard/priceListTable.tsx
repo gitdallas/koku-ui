@@ -11,7 +11,7 @@ import {
   TextContent,
   TextVariants,
   Title,
-  TitleSizes, EmptyStateHeader, EmptyStateFooter,
+  TitleSizes, EmptyStateHeader,
 } from '@patternfly/react-core';
 import { PlusCircleIcon } from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import { SortByDirection } from '@patternfly/react-table';
@@ -270,12 +270,6 @@ class PriceListTable extends React.Component<PriceListTableProps, PriceListTable
                           page={priceListPagination.page}
                           onSetPage={priceListPagination.onPageSet}
                           onPerPageSelect={priceListPagination.onPerPageSet}
-                          titles={{
-                            paginationTitle: intl.formatMessage(messages.paginationTitle, {
-                              title: intl.formatMessage(messages.costModelsAssignSourcesParen),
-                              placement: 'bottom',
-                            }),
-                          }}
                         />
                       </>
                     );

@@ -1,4 +1,4 @@
-import { EmptyState, EmptyStateBody, EmptyStateIcon, Title, TitleSizes, EmptyStateHeader, EmptyStateFooter } from '@patternfly/react-core';
+import { EmptyState, EmptyStateBody, EmptyStateIcon, Title, TitleSizes, EmptyStateHeader } from '@patternfly/react-core';
 import { PlusCircleIcon } from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import type { CostModel } from 'api/costModels';
 import messages from 'locales/messages';

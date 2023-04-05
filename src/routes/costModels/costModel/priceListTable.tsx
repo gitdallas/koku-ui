@@ -7,12 +7,10 @@ import {
   List,
   ListItem,
   Pagination,
-  Title,
-  TitleSizes,
   Toolbar,
   ToolbarContent,
   ToolbarItem,
-  ToolbarItemVariant, EmptyStateHeader, EmptyStateFooter,
+  ToolbarItemVariant, EmptyStateHeader,
 } from '@patternfly/react-core';
 import { PlusCircleIcon } from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import { SortByDirection } from '@patternfly/react-table';

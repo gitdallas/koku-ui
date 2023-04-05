@@ -8,7 +8,8 @@ import {
   Label,
   Popover,
   Spinner,
-  Title, EmptyStateHeader, EmptyStateFooter,
+  EmptyStateHeader,
+  EmptyStateFooter,
 } from '@patternfly/react-core';
 import { DownloadIcon } from '@patternfly/react-icons/dist/esm/icons/download-icon';
 import { ExclamationCircleIcon } from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';

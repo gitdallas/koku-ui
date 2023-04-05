@@ -1,4 +1,4 @@
-import { EmptyState, EmptyStateBody, EmptyStateIcon, Title, TitleSizes, EmptyStateHeader, EmptyStateFooter } from '@patternfly/react-core';
+import { EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStateHeader, EmptyStateFooter } from '@patternfly/react-core';
 import React from 'react';
 
 interface EmptyStateBaseProps {

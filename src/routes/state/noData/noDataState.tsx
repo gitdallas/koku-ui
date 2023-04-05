@@ -1,4 +1,4 @@
-import { Button, EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStateVariant, Title, EmptyStateHeader, EmptyStateFooter } from '@patternfly/react-core';
+import { Button, EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStateVariant, EmptyStateHeader, EmptyStateFooter } from '@patternfly/react-core';
 import { PlusCircleIcon } from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import messages from 'locales/messages';
 import React from 'react';
