@@ -129,12 +129,6 @@ const SourcesTable: React.FC<WrappedComponentProps> = ({ intl }) => {
                 itemCount={itemCount}
                 perPage={perPage}
                 page={page}
-                titles={{
-                  paginationAriaLabel: intl.formatMessage(messages.paginationTitle, {
-                    title: intl.formatMessage(messages.sources),
-                    placement: 'bottom',
-                  }),
-                }}
                 onSetPage={(_evt, newPage) => {
                   fetchSources(sourceType, query, newPage, perPage);
                 }}
