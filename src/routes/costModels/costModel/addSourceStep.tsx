@@ -228,7 +228,7 @@ class AddSourcesStepBase extends React.Component<AddSourcesStepProps, AddSources
                 perPage={this.props.pagination.perPage}
                 page={this.props.pagination.page}
                 titles={{
-                  paginationTitle: intl.formatMessage(messages.paginationTitle, {
+                  paginationAriaLabel: intl.formatMessage(messages.paginationTitle, {
                     title: intl.formatMessage(messages.costModelsAssignSourcesParen),
                     placement: 'bottom',
                   }),

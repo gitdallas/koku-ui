@@ -2,26 +2,28 @@ import './dataToolbar.scss';
 
 import type { SelectOptionObject, ToolbarChipGroup } from '@patternfly/react-core';
 import {
-  Button,
-  ButtonVariant,
-  Dropdown,
-  DropdownItem,
-  DropdownPosition,
-  DropdownToggle,
-  DropdownToggleCheckbox,
-  InputGroup,
-  Select,
-  SelectOption,
-  SelectVariant,
-  Switch,
-  TextInput,
-  Toolbar,
-  ToolbarContent,
-  ToolbarFilter,
-  ToolbarGroup,
-  ToolbarItem,
-  ToolbarToggleGroup,
+	Button,
+	ButtonVariant,
+	InputGroup,
+	Select,
+	SelectOption,
+	SelectVariant,
+	Switch,
+	TextInput,
+	Toolbar,
+	ToolbarContent,
+	ToolbarFilter,
+	ToolbarGroup,
+	ToolbarItem,
+	ToolbarToggleGroup
 } from '@patternfly/react-core';
+import {
+	Dropdown as DropdownDeprecated,
+	DropdownItem as DropdownItemDeprecated,
+	DropdownPosition as DropdownPositionDeprecated,
+	DropdownToggle as DropdownToggleDeprecated,
+	DropdownToggleCheckbox as DropdownToggleCheckboxDeprecated
+} from '@patternfly/react-core/deprecated';
 import { ExportIcon } from '@patternfly/react-icons/dist/esm/icons/export-icon';
 import { FilterIcon } from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { SearchIcon } from '@patternfly/react-icons/dist/esm/icons/search-icon';
@@ -349,23 +351,23 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
     const isChecked = allSelected ? true : someChecked;
 
     const dropdownItems = [
-      <DropdownItem key="item-1" onClick={() => this.handleOnBulkSelectClicked('none')}>
+      <DropdownItemDeprecated key="item-1" onClick={() => this.handleOnBulkSelectClicked('none')}>
         {intl.formatMessage(messages.toolBarBulkSelectNone)}
-      </DropdownItem>,
-      <DropdownItem key="item-2" onClick={() => this.handleOnBulkSelectClicked('page')}>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="item-2" onClick={() => this.handleOnBulkSelectClicked('page')}>
         {intl.formatMessage(messages.toolBarBulkSelectPage, { value: itemsPerPage })}
-      </DropdownItem>,
-      <DropdownItem key="item-3" onClick={() => this.handleOnBulkSelectClicked('all')}>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="item-3" onClick={() => this.handleOnBulkSelectClicked('all')}>
         {intl.formatMessage(messages.toolBarBulkSelectAll, { value: itemsTotal })}
-      </DropdownItem>,
+      </DropdownItemDeprecated>,
     ];
 
     return (
-      <Dropdown
+      <DropdownDeprecated
         onSelect={this.handleOnBulkSelect}
-        position={DropdownPosition.left}
+        position={DropdownPositionDeprecated.left}
         toggle={
-          <DropdownToggle
+          <DropdownToggleDeprecated
             isDisabled={isDisabled || isBulkSelectDisabled}
             splitButtonItems={[
               <DropdownToggleCheckbox
@@ -385,7 +387,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
             {numSelected !== 0 && (
               <React.Fragment>{intl.formatMessage(messages.selected, { value: numSelected })}</React.Fragment>
             )}
-          </DropdownToggle>
+          </DropdownToggleDeprecated>
         }
         isOpen={isBulkSelectOpen}
         dropdownItems={dropdownItems}
@@ -1174,7 +1176,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
                 {datePicker}
               </ToolbarGroup>
             )}
-            <ToolbarItem alignment={{ default: 'alignRight' }} variant="pagination">
+            <ToolbarItem align={{ default: 'alignRight' }} variant="pagination">
               {pagination}
             </ToolbarItem>
           </ToolbarContent>

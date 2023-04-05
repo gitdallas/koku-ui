@@ -12,7 +12,7 @@ import {
   Toolbar,
   ToolbarContent,
   ToolbarItem,
-  ToolbarItemVariant,
+  ToolbarItemVariant, EmptyStateHeader, EmptyStateFooter,
 } from '@patternfly/react-core';
 import { PlusCircleIcon } from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import { SortByDirection } from '@patternfly/react-table';
@@ -274,7 +274,7 @@ class PriceListTable extends React.Component<PriceListTableProps, PriceListTable
                       }
                       onPerPageSelect={(_evt, perPage) => this.setState({ pagination: { page: 1, perPage } })}
                       titles={{
-                        paginationTitle: intl.formatMessage(messages.paginationTitle, {
+                        paginationAriaLabel: intl.formatMessage(messages.paginationTitle, {
                           title: intl.formatMessage(messages.priceList),
                           placement: 'top',
                         }),
@@ -293,10 +293,7 @@ class PriceListTable extends React.Component<PriceListTableProps, PriceListTable
                   search.metrics.length === 0 && (
                     <Bullseye>
                       <EmptyState>
-                        <EmptyStateIcon icon={PlusCircleIcon} />
-                        <Title headingLevel="h2" size={TitleSizes.lg}>
-                          {intl.formatMessage(messages.priceListEmptyRate)}
-                        </Title>
+                        <EmptyStateHeader titleText={<>{intl.formatMessage(messages.priceListEmptyRate)}</>} icon={<EmptyStateIcon icon={PlusCircleIcon} />} headingLevel="h2" />
                         <EmptyStateBody>{intl.formatMessage(messages.priceListEmptyRateDesc)}</EmptyStateBody>
                       </EmptyState>
                     </Bullseye>
@@ -372,7 +369,7 @@ class PriceListTable extends React.Component<PriceListTableProps, PriceListTable
                               })
                             }
                             titles={{
-                              paginationTitle: intl.formatMessage(messages.paginationTitle, {
+                              paginationAriaLabel: intl.formatMessage(messages.paginationTitle, {
                                 title: intl.formatMessage(messages.priceList),
                                 placement: 'bottom',
                               }),

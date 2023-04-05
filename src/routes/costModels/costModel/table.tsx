@@ -1,4 +1,4 @@
-import { EmptyState, EmptyStateBody, EmptyStateIcon, Title, TitleSizes } from '@patternfly/react-core';
+import { EmptyState, EmptyStateBody, EmptyStateIcon, Title, TitleSizes, EmptyStateHeader, EmptyStateFooter } from '@patternfly/react-core';
 import { PlusCircleIcon } from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import type { CostModel } from 'api/costModels';
 import messages from 'locales/messages';
@@ -118,10 +118,7 @@ class TableBase extends React.Component<TableBaseProps, TableBaseState> {
         {rows.length === 0 && (
           <div style={styles.emptyState}>
             <EmptyState>
-              <EmptyStateIcon icon={PlusCircleIcon} />
-              <Title headingLevel="h2" size={TitleSizes.lg}>
-                {intl.formatMessage(messages.costModelsSourceEmptyStateDesc)}
-              </Title>
+              <EmptyStateHeader titleText={<>{intl.formatMessage(messages.costModelsSourceEmptyStateDesc)}</>} icon={<EmptyStateIcon icon={PlusCircleIcon} />} headingLevel="h2" />
               <EmptyStateBody>{intl.formatMessage(messages.costModelsSourceEmptyStateTitle)}</EmptyStateBody>
             </EmptyState>
           </div>
