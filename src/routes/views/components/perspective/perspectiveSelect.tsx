@@ -96,7 +96,7 @@ class PerspectiveSelectBase extends React.Component<PerspectiveSelectProps, Pers
     });
   };
 
-  private handleToggle = isSelectOpen => {
+  private handleToggle = (_event, isSelectOpen) => {
     this.setState({ isSelectOpen });
   };
 

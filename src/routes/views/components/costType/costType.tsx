@@ -113,7 +113,7 @@ class CostTypeBase extends React.Component<CostTypeProps, CostTypeState> {
     );
   };
 
-  private handleToggle = isSelectOpen => {
+  private handleToggle = (_event, isSelectOpen) => {
     this.setState({ isSelectOpen });
   };
 

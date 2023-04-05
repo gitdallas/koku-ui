@@ -45,7 +45,7 @@ class ChartComparisonBase extends React.Component<ChartComparisonProps, ChartCom
         isDisabled={isDisabled}
         isOpen={isSelectOpen}
         onSelect={this.handleSelect}
-        onToggle={this.handleToggle}
+        onToggle={(_event, isOpen) => this.handleToggle(isOpen)}
         selections={selection}
         variant={SelectVariant.single}
       >

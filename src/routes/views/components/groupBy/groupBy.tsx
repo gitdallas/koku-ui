@@ -259,7 +259,7 @@ class GroupByBase extends React.Component<GroupByProps, GroupByState> {
     }
   };
 
-  private handleGroupByToggle = isGroupByOpen => {
+  private handleGroupByToggle = (_event, isGroupByOpen) => {
     this.setState({
       isGroupByOpen,
     });

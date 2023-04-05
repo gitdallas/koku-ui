@@ -121,7 +121,7 @@ class CurrencyBase extends React.Component<CurrencyProps, CurrencyState> {
     );
   };
 
-  private handleToggle = isSelectOpen => {
+  private handleToggle = (_event, isSelectOpen) => {
     this.setState({ isSelectOpen });
   };
 

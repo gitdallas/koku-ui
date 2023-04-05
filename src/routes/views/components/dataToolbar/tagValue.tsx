@@ -122,7 +122,7 @@ class TagValueBase extends React.Component<TagValueProps, TagValueState> {
     });
   };
 
-  private onTagValueToggle = isOpen => {
+  private onTagValueToggle = (_event, isOpen) => {
     this.setState({
       isTagValueExpanded: isOpen,
     });

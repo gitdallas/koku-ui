@@ -125,7 +125,7 @@ class GroupByTagBase extends React.Component<GroupByTagProps, GroupByTagState> {
     }
   };
 
-  private handleGroupByToggle = isGroupByOpen => {
+  private handleGroupByToggle = (_event, isGroupByOpen) => {
     this.setState({ isGroupByOpen });
   };
 

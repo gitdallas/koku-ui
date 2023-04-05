@@ -370,7 +370,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
           <DropdownToggleDeprecated
             isDisabled={isDisabled || isBulkSelectDisabled}
             splitButtonItems={[
-              <DropdownToggleCheckbox
+              <DropdownToggleCheckboxDeprecated
                 id="bulk-select"
                 key="bulk-select"
                 aria-label={intl.formatMessage(
@@ -409,7 +409,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
     });
   };
 
-  private handleOnBulkSelectToggle = isOpen => {
+  private handleOnBulkSelectToggle = (_event, isOpen) => {
     this.setState({
       isBulkSelectOpen: isOpen,
     });
@@ -471,7 +471,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
     });
   };
 
-  private handleOnCategoryToggle = isOpen => {
+  private handleOnCategoryToggle = (_event, isOpen) => {
     this.setState({
       isCategorySelectOpen: isOpen,
     });
@@ -664,7 +664,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
     });
   };
 
-  private handleOnExcludeToggle = isOpen => {
+  private handleOnExcludeToggle = (_event, isOpen) => {
     this.setState({
       isExcludeSelectOpen: isOpen,
     });
@@ -805,7 +805,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
     );
   };
 
-  private handleOnOrgUnitToggle = isOpen => {
+  private handleOnOrgUnitToggle = (_event, isOpen) => {
     this.setState({
       isOrgUnitSelectExpanded: isOpen,
     });
@@ -900,7 +900,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
     });
   };
 
-  private handleOnTagKeyToggle = isOpen => {
+  private handleOnTagKeyToggle = (_event, isOpen) => {
     this.setState({
       isTagKeySelectExpanded: isOpen,
     });

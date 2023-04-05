@@ -160,7 +160,7 @@ export class ColumnManagementModalBase extends React.Component<ColumnManagementM
                   isChecked={!this.isHidden(option.value)}
                   name={option.value}
                   id={option.value}
-                  onChange={this.handleChange}
+                  onChange={(_event, checked) => this.handleChange(checked, _event)}
                 />
                 <DataListItemCells
                   dataListCells={[
