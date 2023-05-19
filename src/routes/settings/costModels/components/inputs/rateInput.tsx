@@ -1,6 +1,6 @@
 import type { MessageDescriptor } from '@formatjs/intl/src/types';
 import type { FormGroupProps, TextInputProps } from '@patternfly/react-core';
-import { FormGroup, InputGroup, InputGroupText, TextInput } from '@patternfly/react-core';
+import { FormGroup, InputGroup, InputGroupText, TextInput, InputGroupItem } from '@patternfly/react-core';
 import { intl as defaultIntl } from 'components/i18n';
 import messages from 'locales/messages';
 import React from 'react';
@@ -48,10 +48,10 @@ const RateInputBase: React.FC<RateInputBaseProps> = ({
       validated={validated}
     >
       <InputGroup>
-        <InputGroupText style={styles.currency}>
+        <InputGroupItem isBox><InputGroupText style={styles.currency}>
           {intl.formatMessage(messages.currencyUnits, { units: currencyUnits })}
-        </InputGroupText>
-        <TextInput
+        </InputGroupText></InputGroupItem>
+        <InputGroupItem isFill><TextInput
           onBlur={onBlur}
           isRequired
           type="text"
@@ -62,7 +62,7 @@ const RateInputBase: React.FC<RateInputBaseProps> = ({
           onChange={onChange}
           onKeyDown={handleOnKeyDown}
           validated={validated}
-        />
+        /></InputGroupItem>
       </InputGroup>
     </FormGroup>
   );

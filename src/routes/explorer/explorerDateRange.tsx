@@ -1,6 +1,9 @@
 import type { MessageDescriptor } from '@formatjs/intl/src/types';
-import type { SelectOptionObject } from '@patternfly/react-core';
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+
+import {
+	Select as SelectDeprecated,
+	
+} from '@patternfly/react-core/deprecated';
 import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';
 import { injectIntl } from 'react-intl';
@@ -40,7 +43,7 @@ class ExplorerDateRangeBase extends React.Component<ExplorerDateRangeProps, Expl
     const selection = selectOptions.find((option: ExplorerDateRangeOption) => option.value === dateRangeType);
 
     return (
-      <Select
+      <SelectDeprecated
         id="dateRangeSelect"
         isDisabled={isDisabled}
         isOpen={isSelectOpen}
@@ -52,7 +55,7 @@ class ExplorerDateRangeBase extends React.Component<ExplorerDateRangeProps, Expl
         {selectOptions.map(option => (
           <SelectOption key={option.value} value={option} />
         ))}
-      </Select>
+      </SelectDeprecated>
     );
   };
 

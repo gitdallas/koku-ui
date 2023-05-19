@@ -2,7 +2,7 @@ import type { IActions, ThProps } from '@patternfly/react-table';
 import {
   ActionsColumn,
   ExpandableRowContent,
-  TableComposable,
+  Table,
   TableVariant,
   Tbody,
   Td,
@@ -122,9 +122,9 @@ const RateTableBase: React.FC<RateTableProps> = ({
         });
 
   return (
-    <TableComposable
+    <Table
       aria-label={intl.formatMessage(messages.costModelsWizardCreatePriceList)}
-      variant={TableVariant.compact}
+      variant={TableVariant.compact} data-codemods="true"
     >
       <Thead>
         <Tr>
@@ -170,7 +170,7 @@ const RateTableBase: React.FC<RateTableProps> = ({
               <Tr>
                 <Td colSpan={6}>
                   <ExpandableRowContent>
-                    <TableComposable borders={false} variant={TableVariant.compact}>
+                    <Table borders={false} variant={TableVariant.compact} data-codemods="true">
                       <Thead>
                         <Tr>
                           {tagColumns.map((tag, tagIndex) => (
@@ -189,7 +189,7 @@ const RateTableBase: React.FC<RateTableProps> = ({
                           </Tr>
                         ))}
                       </Tbody>
-                    </TableComposable>
+                    </Table>
                   </ExpandableRowContent>
                 </Td>
               </Tr>
@@ -197,7 +197,7 @@ const RateTableBase: React.FC<RateTableProps> = ({
           </Tbody>
         );
       })}
-    </TableComposable>
+    </Table>
   );
 };
 

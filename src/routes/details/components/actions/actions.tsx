@@ -1,4 +1,8 @@
-import { Dropdown, DropdownItem, KebabToggle } from '@patternfly/react-core';
+import {
+	Dropdown as DropdownDeprecated,
+	DropdownItem as DropdownItemDeprecated,
+	KebabToggle as KebabToggleDeprecated
+} from '@patternfly/react-core/deprecated';
 import type { ProviderType } from 'api/providers';
 import type { ReportPathsType } from 'api/reports/report';
 import messages from 'locales/messages';
@@ -103,29 +107,29 @@ class DetailsActionsBase extends React.Component<DetailsActionsProps, DetailsAct
 
     // tslint:disable:jsx-wrap-multiline
     const items = [
-      <DropdownItem component="button" isDisabled={isDisabled} key="export-action" onClick={this.handleExportModalOpen}>
+      <DropdownItemDeprecated component="button" isDisabled={isDisabled} key="export-action" onClick={this.handleExportModalOpen}>
         {intl.formatMessage(messages.detailsActionsExport)}
-      </DropdownItem>,
+      </DropdownItemDeprecated>,
     ];
 
     if (showPriceListOption) {
       items.unshift(
-        <DropdownItem
+        <DropdownItemDeprecated
           component="button"
           key="price-list-action"
           isDisabled={isDisabled || groupBy.includes(tagPrefix) || source_uuid.length === 0}
           onClick={() => redirectToCostModel(source_uuid[0], router)}
         >
           {intl.formatMessage(messages.detailsActionsPriceList)}
-        </DropdownItem>
+        </DropdownItemDeprecated>
       );
     }
 
     return (
       <>
-        <Dropdown
+        <DropdownDeprecated
           onSelect={this.handleOnSelect}
-          toggle={<KebabToggle onToggle={this.handleOnToggle} />}
+          toggle={<KebabToggleDeprecated onToggle={this.handleOnToggle} />}
           isOpen={this.state.isDropdownOpen}
           isPlain
           position="right"

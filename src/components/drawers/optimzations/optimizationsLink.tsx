@@ -112,7 +112,7 @@ class OptimizationsLinkBase extends React.Component<OptimizationsLinkProps, any>
     );
     if (isDisabled) {
       return (
-        <Tooltip content={intl.formatMessage(messages.optimizationsViewAllDisabled)} removeFindDomNode>
+        <Tooltip content={intl.formatMessage(messages.optimizationsViewAllDisabled)} >
           {buttonComponent}
         </Tooltip>
       );

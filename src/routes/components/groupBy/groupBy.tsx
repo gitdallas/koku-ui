@@ -1,5 +1,11 @@
-import type { SelectOptionObject } from '@patternfly/react-core';
-import { Select, SelectOption, SelectVariant, Title } from '@patternfly/react-core';
+
+import {
+	Title
+} from '@patternfly/react-core';
+import {
+	Select as SelectDeprecated,
+	
+} from '@patternfly/react-core/deprecated';
 import type { Org, OrgPathsType } from 'api/orgs/org';
 import { OrgType } from 'api/orgs/org';
 import type { Query } from 'api/queries/query';
@@ -194,7 +200,7 @@ class GroupByBase extends React.Component<GroupByProps, GroupByState> {
     const selection = selectOptions.find((option: GroupByOption) => option.value === currentItem);
 
     return (
-      <Select
+      <SelectDeprecated
         id="groupBySelect"
         isDisabled={isDisabled}
         isOpen={isGroupByOpen}
@@ -206,7 +212,7 @@ class GroupByBase extends React.Component<GroupByProps, GroupByState> {
         {selectOptions.map(option => (
           <SelectOption key={option.value} value={option} />
         ))}
-      </Select>
+      </SelectDeprecated>
     );
   };
 

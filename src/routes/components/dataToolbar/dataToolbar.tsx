@@ -1,27 +1,33 @@
 import './dataToolbar.scss';
 
-import type { SelectOptionObject, ToolbarChipGroup } from '@patternfly/react-core';
 import {
-  Button,
-  ButtonVariant,
-  Dropdown,
-  DropdownItem,
-  DropdownPosition,
-  DropdownToggle,
-  DropdownToggleCheckbox,
-  InputGroup,
-  Select,
-  SelectOption,
-  SelectVariant,
-  Switch,
-  TextInput,
-  Toolbar,
-  ToolbarContent,
-  ToolbarFilter,
-  ToolbarGroup,
-  ToolbarItem,
-  ToolbarToggleGroup,
+	ToolbarChipGroup
 } from '@patternfly/react-core';
+import {
+	Dropdown as DropdownDeprecated,
+	DropdownItem as DropdownItemDeprecated,
+	DropdownPosition as DropdownPositionDeprecated,
+	DropdownToggle as DropdownToggleDeprecated,
+	
+} from '@patternfly/react-core/deprecated';
+import {
+	Button,
+	ButtonVariant,
+	InputGroup,
+	Switch,
+	TextInput,
+	Toolbar,
+	ToolbarContent,
+	ToolbarFilter,
+	ToolbarGroup,
+	ToolbarItem,
+	ToolbarToggleGroup, InputGroupItem
+} from '@patternfly/react-core';
+import {
+	Select as SelectDeprecated,
+	SelectOption as SelectOptionDeprecated,
+	
+} from '@patternfly/react-core/deprecated';
 import { ExportIcon } from '@patternfly/react-icons/dist/esm/icons/export-icon';
 import { FilterIcon } from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { SearchIcon } from '@patternfly/react-icons/dist/esm/icons/search-icon';
@@ -388,23 +394,23 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
     const isChecked = allSelected ? true : someChecked;
 
     const dropdownItems = [
-      <DropdownItem key="item-1" onClick={() => this.handleOnBulkSelectClicked('none')}>
+      <DropdownItemDeprecated key="item-1" onClick={() => this.handleOnBulkSelectClicked('none')}>
         {intl.formatMessage(messages.toolBarBulkSelectNone)}
-      </DropdownItem>,
-      <DropdownItem key="item-2" onClick={() => this.handleOnBulkSelectClicked('page')}>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="item-2" onClick={() => this.handleOnBulkSelectClicked('page')}>
         {intl.formatMessage(messages.toolBarBulkSelectPage, { value: itemsPerPage })}
-      </DropdownItem>,
-      <DropdownItem key="item-3" onClick={() => this.handleOnBulkSelectClicked('all')}>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="item-3" onClick={() => this.handleOnBulkSelectClicked('all')}>
         {intl.formatMessage(messages.toolBarBulkSelectAll, { value: itemsTotal })}
-      </DropdownItem>,
+      </DropdownItemDeprecated>,
     ];
 
     return (
-      <Dropdown
+      <DropdownDeprecated
         onSelect={this.handleOnBulkSelect}
-        position={DropdownPosition.left}
+        position={DropdownPositionDeprecated.left}
         toggle={
-          <DropdownToggle
+          <DropdownToggleDeprecated
             isDisabled={isDisabled || isBulkSelectDisabled}
             splitButtonItems={[
               <DropdownToggleCheckbox
@@ -424,7 +430,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
             {numSelected !== 0 && (
               <React.Fragment>{intl.formatMessage(messages.selected, { value: numSelected })}</React.Fragment>
             )}
-          </DropdownToggle>
+          </DropdownToggleDeprecated>
         }
         isOpen={isBulkSelectOpen}
         dropdownItems={dropdownItems}
@@ -467,7 +473,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
 
     return (
       <ToolbarItem>
-        <Select
+        <SelectDeprecated
           id="category-select"
           isDisabled={isDisabled && !hasFilters}
           isOpen={isCategorySelectOpen}
@@ -480,7 +486,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
           {selectOptions.map(option => (
             <SelectOption key={option.value} value={option} />
           ))}
-        </Select>
+        </SelectDeprecated>
       </ToolbarItem>
     );
   }
@@ -530,7 +536,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
         showToolbarItem={currentCategory === categoryOption.key}
       >
         <InputGroup>
-          {categoryOption.key === 'workload_type' ? (
+          <InputGroupItem>{categoryOption.key === 'workload_type' ? (
             <WorkloadType
               isDisabled={isDisabled && !hasFilters}
               onSelect={this.handleOnWorkloadTypeSelect}
@@ -570,7 +576,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
                 <SearchIcon />
               </Button>
             </>
-          )}
+          )}</InputGroupItem>
         </InputGroup>
       </ToolbarFilter>
     );
@@ -697,12 +703,12 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
     }
 
     const selectOptions = this.getCostCategoryKeyOptions().map(selectOption => {
-      return <SelectOption key={selectOption.key} value={selectOption.key} />;
+      return <SelectOptionDeprecated key={selectOption.key} value={selectOption.key} />;
     });
 
     return (
       <ToolbarItem>
-        <Select
+        <SelectDeprecated
           isDisabled={isDisabled && !hasFilters}
           variant={SelectVariant.typeahead}
           typeAheadAriaLabel={intl.formatMessage(messages.filterByCostCategoryKeyAriaLabel)}
@@ -714,7 +720,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
           selections={currentCostCategoryKey}
         >
           {selectOptions}
-        </Select>
+        </SelectDeprecated>
       </ToolbarItem>
     );
   };
@@ -917,7 +923,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
 
     return (
       <ToolbarItem>
-        <Select
+        <SelectDeprecated
           id="exclude-select"
           isDisabled={isDisabled && !hasFilters}
           isOpen={isExcludeSelectOpen}
@@ -929,7 +935,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
           {selectOptions.map(option => (
             <SelectOption key={option.value} value={option} />
           ))}
-        </Select>
+        </SelectDeprecated>
       </ToolbarItem>
     );
   }
@@ -1007,7 +1013,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
         key={orgUnitIdKey}
         showToolbarItem={currentCategory === orgUnitIdKey}
       >
-        <Select
+        <SelectDeprecated
           isDisabled={isDisabled && !hasFilters}
           className="selectOverride"
           variant={SelectVariant.checkbox}
@@ -1021,7 +1027,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
           {options.map(option => (
             <SelectOption description={option.id} key={option.id} value={option} />
           ))}
-        </Select>
+        </SelectDeprecated>
       </ToolbarFilter>
     );
   };
@@ -1117,12 +1123,12 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
     }
 
     const selectOptions = this.getTagKeyOptions().map(selectOption => {
-      return <SelectOption key={selectOption.key} value={selectOption.key} />;
+      return <SelectOptionDeprecated key={selectOption.key} value={selectOption.key} />;
     });
 
     return (
       <ToolbarItem>
-        <Select
+        <SelectDeprecated
           isDisabled={isDisabled && !hasFilters}
           variant={SelectVariant.typeahead}
           typeAheadAriaLabel={intl.formatMessage(messages.filterByTagKeyAriaLabel)}
@@ -1134,7 +1140,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
           selections={currentTagKey}
         >
           {selectOptions}
-        </Select>
+        </SelectDeprecated>
       </ToolbarItem>
     );
   };
@@ -1478,7 +1484,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
               </ToolbarGroup>
             )}
             {actions && <ToolbarGroup>{actions}</ToolbarGroup>}
-            <ToolbarItem alignment={{ default: 'alignRight' }} variant="pagination">
+            <ToolbarItem align={{ default: 'alignRight' }} variant="pagination">
               {pagination}
             </ToolbarItem>
           </ToolbarContent>

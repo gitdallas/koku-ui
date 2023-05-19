@@ -1,5 +1,8 @@
-import type { SelectOptionObject } from '@patternfly/react-core';
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+
+import {
+	Select as SelectDeprecated,
+	
+} from '@patternfly/react-core/deprecated';
 import React from 'react';
 
 interface ChartComparisonOwnProps {
@@ -40,7 +43,7 @@ class ChartComparisonBase extends React.Component<ChartComparisonProps, ChartCom
     const selection = selectOptions.find((option: ComparisonOption) => option.value === currentItem);
 
     return (
-      <Select
+      <SelectDeprecated
         id="comparisonSelect"
         isDisabled={isDisabled}
         isOpen={isSelectOpen}
@@ -52,7 +55,7 @@ class ChartComparisonBase extends React.Component<ChartComparisonProps, ChartCom
         {selectOptions.map(option => (
           <SelectOption key={option.value} value={option} />
         ))}
-      </Select>
+      </SelectDeprecated>
     );
   };
 

@@ -1,6 +1,16 @@
 import type { MessageDescriptor } from '@formatjs/intl/src/types';
-import type { FormGroupProps, FormSelectProps, SelectOptionObject } from '@patternfly/react-core';
-import { FormGroup, Select, SelectDirection, SelectOption, SelectVariant } from '@patternfly/react-core';
+import {
+	FormGroupProps,
+	FormSelectProps
+} from '@patternfly/react-core';
+
+import {
+	FormGroup
+} from '@patternfly/react-core';
+import {
+	Select as SelectDeprecated,
+	
+} from '@patternfly/react-core/deprecated';
 import { intl as defaultIntl } from 'components/i18n';
 import React, { useEffect, useState } from 'react';
 import type { WrappedComponentProps } from 'react-intl';
@@ -87,7 +97,7 @@ const SelectorBase: React.FC<SelectorProps> = ({
       helperTextInvalid={helpText !== null && typeof helpText === 'object' ? intl.formatMessage(helpText) : helpText}
       validated={isInvalid ? 'error' : 'default'}
     >
-      <Select
+      <SelectDeprecated
         id={id}
         ouiaId={id}
         maxHeight={maxHeight}
@@ -109,7 +119,7 @@ const SelectorBase: React.FC<SelectorProps> = ({
         {getSelectorOptions().map(opt => (
           <SelectOption key={`${opt.value}`} value={opt} description={opt.description} />
         ))}
-      </Select>
+      </SelectDeprecated>
     </FormGroup>
   );
 };

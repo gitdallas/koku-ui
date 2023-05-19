@@ -1,5 +1,8 @@
-import type { SelectOptionObject } from '@patternfly/react-core';
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+
+import {
+	Select as SelectDeprecated,
+	
+} from '@patternfly/react-core/deprecated';
 import type { Org } from 'api/orgs/org';
 import type { Query } from 'api/queries/query';
 import { parseQuery } from 'api/queries/query';
@@ -145,7 +148,7 @@ class GroupByOrgBase extends React.Component<GroupByOrgProps, GroupByOrgState> {
 
     return (
       <div style={styles.groupBySelector}>
-        <Select
+        <SelectDeprecated
           aria-label={intl.formatMessage(messages.filterByOrgUnitAriaLabel)}
           isDisabled={isDisabled}
           onClear={this.handleGroupByClear}
@@ -159,7 +162,7 @@ class GroupByOrgBase extends React.Component<GroupByOrgProps, GroupByOrgState> {
           {groupByItems.map(item => (
             <SelectOption description={item.id} key={item.id} value={item} />
           ))}
-        </Select>
+        </SelectDeprecated>
       </div>
     );
   }

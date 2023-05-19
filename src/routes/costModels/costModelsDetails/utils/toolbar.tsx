@@ -1,5 +1,13 @@
 import type { PaginationProps } from '@patternfly/react-core';
-import { Pagination, PaginationVariant, Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+import {
+	Pagination,
+	PaginationVariant
+} from '@patternfly/react-core';
+import {
+	Select as SelectDeprecated,
+	SelectOption as SelectOptionDeprecated,
+	
+} from '@patternfly/react-core/deprecated';
 import { FilterIcon } from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { intl as defaultIntl } from 'components/i18n';
 import messages from 'locales/messages';
@@ -62,18 +70,18 @@ const CostModelsFilterSelectorBase: React.FC<CostModelsFilterSelectorProps> = ({
 }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const options = [
-    <SelectOption key="name" value="name">
+    <SelectOptionDeprecated key="name" value="name">
       {intl.formatMessage(messages.names, { count: 1 })}
-    </SelectOption>,
-    <SelectOption key="description" value="description">
+    </SelectOptionDeprecated>,
+    <SelectOptionDeprecated key="description" value="description">
       {intl.formatMessage(messages.description)}
-    </SelectOption>,
-    <SelectOption key="sourceType" value="sourceType">
+    </SelectOptionDeprecated>,
+    <SelectOptionDeprecated key="sourceType" value="sourceType">
       {intl.formatMessage(messages.sourceType)}
-    </SelectOption>,
+    </SelectOptionDeprecated>,
   ];
   return (
-    <Select
+    <SelectDeprecated
       isOpen={isOpen}
       onSelect={(_event, value: string) => {
         updateFilterType(value);
@@ -85,7 +93,7 @@ const CostModelsFilterSelectorBase: React.FC<CostModelsFilterSelectorProps> = ({
       variant={SelectVariant.single}
     >
       {options}
-    </Select>
+    </SelectDeprecated>
   );
 };
 const CostModelsFilterSelectorConnect = connect(

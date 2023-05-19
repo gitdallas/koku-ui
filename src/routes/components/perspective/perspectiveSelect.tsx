@@ -1,6 +1,12 @@
 import type { MessageDescriptor } from '@formatjs/intl/src/types';
-import type { SelectOptionObject } from '@patternfly/react-core';
-import { Select, SelectOption, SelectVariant, Title } from '@patternfly/react-core';
+
+import {
+	Title
+} from '@patternfly/react-core';
+import {
+	Select as SelectDeprecated,
+	
+} from '@patternfly/react-core/deprecated';
 import messages from 'locales/messages';
 import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';
@@ -69,7 +75,7 @@ class PerspectiveSelectBase extends React.Component<PerspectiveSelectProps, Pers
     const selection = selectOptions.find((option: PerspectiveOption) => option.value === currentItem);
 
     return (
-      <Select
+      <SelectDeprecated
         id="perspectiveSelect"
         isDisabled={isDisabled}
         isOpen={isSelectOpen}
@@ -81,7 +87,7 @@ class PerspectiveSelectBase extends React.Component<PerspectiveSelectProps, Pers
         {selectOptions.map(option => (
           <SelectOption isDisabled={option.isDisabled} key={option.value} value={option} />
         ))}
-      </Select>
+      </SelectDeprecated>
     );
   };
 

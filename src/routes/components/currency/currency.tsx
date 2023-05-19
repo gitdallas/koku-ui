@@ -1,8 +1,15 @@
 import './currency.scss';
 
 import type { MessageDescriptor } from '@formatjs/intl/src/types';
-import type { SelectOptionObject } from '@patternfly/react-core';
-import { Select, SelectOption, SelectVariant, Title, TitleSizes } from '@patternfly/react-core';
+
+import {
+	Title,
+	TitleSizes
+} from '@patternfly/react-core';
+import {
+	Select as SelectDeprecated,
+	
+} from '@patternfly/react-core/deprecated';
 import messages from 'locales/messages';
 import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';
@@ -75,7 +82,7 @@ class CurrencyBase extends React.Component<CurrencyProps, CurrencyState> {
     const selection = selectOptions.find((option: CurrencyOption) => option.value === currency);
 
     return (
-      <Select
+      <SelectDeprecated
         className={showLabel ? 'currencyOverride' : undefined}
         id="currencySelect"
         isDisabled={isDisabled}
@@ -88,7 +95,7 @@ class CurrencyBase extends React.Component<CurrencyProps, CurrencyState> {
         {selectOptions.map(option => (
           <SelectOption key={option.value} value={option} />
         ))}
-      </Select>
+      </SelectDeprecated>
     );
   };
 

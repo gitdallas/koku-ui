@@ -1,4 +1,8 @@
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+import {
+	Select as SelectDeprecated,
+	SelectOption as SelectOptionDeprecated,
+	
+} from '@patternfly/react-core/deprecated';
 import type { Query } from 'api/queries/query';
 import { parseQuery } from 'api/queries/query';
 import type { Resource } from 'api/resources/resource';
@@ -110,7 +114,7 @@ class GroupBySelectBase extends React.Component<GroupBySelectProps, GroupBySelec
 
     return data.map((item, index) => {
       const key = hasKeys ? item.key : item;
-      return <SelectOption key={`${key}:${index}`} value={key} />;
+      return <SelectOptionDeprecated key={`${key}:${index}`} value={key} />;
     });
   };
 
@@ -143,7 +147,7 @@ class GroupBySelectBase extends React.Component<GroupBySelectProps, GroupBySelec
 
     return (
       <div style={styles.groupBySelector}>
-        <Select
+        <SelectDeprecated
           aria-label={intl.formatMessage(
             isCostCategory ? messages.filterByCostCategoryKeyAriaLabel : messages.filterByTagKeyAriaLabel
           )}
@@ -157,7 +161,7 @@ class GroupBySelectBase extends React.Component<GroupBySelectProps, GroupBySelec
           variant={SelectVariant.typeahead}
         >
           {this.getGroupByItems()}
-        </Select>
+        </SelectDeprecated>
       </div>
     );
   }

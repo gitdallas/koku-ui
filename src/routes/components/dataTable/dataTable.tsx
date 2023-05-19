@@ -1,9 +1,9 @@
 import './dataTable.scss';
 
-import { Bullseye, EmptyState, EmptyStateBody, EmptyStateIcon, Spinner } from '@patternfly/react-core';
+import { Bullseye, EmptyState, EmptyStateBody, EmptyStateIcon, Spinner, EmptyStateHeader } from '@patternfly/react-core';
 import { CalculatorIcon } from '@patternfly/react-icons/dist/esm/icons/calculator-icon';
 import type { ThProps } from '@patternfly/react-table';
-import { SortByDirection, TableComposable, TableVariant, Tbody, Td, Th, Thead, Tr } from '@patternfly/react-table';
+import { SortByDirection, Table, TableVariant, Tbody, Td, Th, Thead, Tr } from '@patternfly/react-table';
 import messages from 'locales/messages';
 import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';
@@ -54,8 +54,7 @@ class DataTable extends React.Component<DataTableProps, any> {
     }
     return (
       <EmptyState>
-        <EmptyStateIcon icon={CalculatorIcon} />
-        <EmptyStateBody>{intl.formatMessage(messages.detailsEmptyState)}</EmptyStateBody>
+        <EmptyStateHeader icon={<EmptyStateIcon icon={CalculatorIcon} />} /><EmptyStateBody>{intl.formatMessage(messages.detailsEmptyState)}</EmptyStateBody>
       </EmptyState>
     );
   };
@@ -131,12 +130,12 @@ class DataTable extends React.Component<DataTableProps, any> {
 
     return (
       <>
-        <TableComposable
+        <Table
           aria-label={intl.formatMessage(messages.dataTableAriaLabel)}
           className="tableOverride"
           gridBreakPoint="grid-2xl"
           hasSelectableRowCaption={isOptimizations}
-          variant={TableVariant.compact}
+          variant={TableVariant.compact} data-codemods="true"
         >
           <Thead>
             <Tr>
@@ -167,7 +166,7 @@ class DataTable extends React.Component<DataTableProps, any> {
               rows.map((row, rowIndex) => (
                 <Tr
                   isSelectable={isOptimizations}
-                  isHoverable={isOptimizations}
+                  isClickable={isOptimizations}
                   isRowSelected={isOptimizations && row.selected}
                   onRowClick={isOptimizations ? _event => this.handleOnRowClick(_event, rowIndex) : undefined}
                   key={`row-${rowIndex}`}
@@ -179,7 +178,7 @@ class DataTable extends React.Component<DataTableProps, any> {
                         key={`cell-${cellIndex}-${rowIndex}`}
                         modifier="nowrap"
                         select={{
-                          disable: row.selectionDisabled, // Disable select for "no-project"
+                          isDisabled: row.selectionDisabled, // Disable select for "no-project"
                           isSelected: row.selected,
                           onSelect: (_event, isSelected) => this.handleOnSelect(_event, isSelected, rowIndex),
                           rowIndex,
@@ -202,7 +201,7 @@ class DataTable extends React.Component<DataTableProps, any> {
               ))
             )}
           </Tbody>
-        </TableComposable>
+        </Table>
         {rows.length === 0 && <div style={styles.emptyState}>{this.getEmptyState()}</div>}
       </>
     );

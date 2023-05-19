@@ -1,7 +1,14 @@
 import './dataToolbar.scss';
 
-import type { SelectOptionObject, ToolbarChipGroup } from '@patternfly/react-core';
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+import {
+	ToolbarChipGroup
+} from '@patternfly/react-core';
+
+import {
+	Select as SelectDeprecated,
+	SelectOption as SelectOptionDeprecated,
+	
+} from '@patternfly/react-core/deprecated';
 import messages from 'locales/messages';
 import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';
@@ -51,11 +58,11 @@ class WorkloadTypeBase extends React.Component<WorkloadTypeProps, WorkloadTypeSt
     const { isWorkloadTypeExpanded } = this.state;
 
     const selectOptions = this.getOptions().map(selectOption => {
-      return <SelectOption key={selectOption.key} value={selectOption.key} />;
+      return <SelectOptionDeprecated key={selectOption.key} value={selectOption.key} />;
     });
 
     return (
-      <Select
+      <SelectDeprecated
         className="selectOverride"
         isDisabled={isDisabled}
         variant={SelectVariant.checkbox}
@@ -67,7 +74,7 @@ class WorkloadTypeBase extends React.Component<WorkloadTypeProps, WorkloadTypeSt
         placeholderText={intl.formatMessage(messages.chooseValuePlaceholder)}
       >
         {selectOptions}
-      </Select>
+      </SelectDeprecated>
     );
   }
 }

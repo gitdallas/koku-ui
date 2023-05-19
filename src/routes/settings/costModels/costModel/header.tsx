@@ -1,24 +1,26 @@
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  Dropdown,
-  DropdownItem,
-  KebabToggle,
-  List,
-  ListItem,
-  Split,
-  SplitItem,
-  Tab,
-  Tabs,
-  TabTitleText,
-  TextContent,
-  TextList,
-  TextListItem,
-  TextListItemVariants,
-  TextListVariants,
-  Title,
-  TitleSizes,
+	Breadcrumb,
+	BreadcrumbItem,
+	List,
+	ListItem,
+	Split,
+	SplitItem,
+	Tab,
+	Tabs,
+	TabTitleText,
+	TextContent,
+	TextList,
+	TextListItem,
+	TextListItemVariants,
+	TextListVariants,
+	Title,
+	TitleSizes
 } from '@patternfly/react-core';
+import {
+	Dropdown as DropdownDeprecated,
+	DropdownItem as DropdownItemDeprecated,
+	KebabToggle as KebabToggleDeprecated
+} from '@patternfly/react-core/deprecated';
 import type { CostModel } from 'api/costModels';
 import messages from 'locales/messages';
 import React from 'react';
@@ -122,15 +124,15 @@ const Header: React.FC<Props> = ({
             {current.description}
           </SplitItem>
           <SplitItem>
-            <Dropdown
-              toggle={<KebabToggle onToggle={setDropdownIsOpen} />}
+            <DropdownDeprecated
+              toggle={<KebabToggleDeprecated onToggle={setDropdownIsOpen} />}
               isOpen={dropdownIsOpen}
               onSelect={() => setDropdownIsOpen(false)}
               isPlain
               position="right"
               dropdownItems={[
                 <ReadOnlyTooltip key="edit" isDisabled={!isWritePermission}>
-                  <DropdownItem
+                  <DropdownItemDeprecated
                     isDisabled={!isWritePermission}
                     onClick={() =>
                       setDialogOpen({
@@ -140,10 +142,10 @@ const Header: React.FC<Props> = ({
                     }
                   >
                     {intl.formatMessage(messages.edit)}
-                  </DropdownItem>
+                  </DropdownItemDeprecated>
                 </ReadOnlyTooltip>,
                 <ReadOnlyTooltip key="delete" isDisabled={!isWritePermission}>
-                  <DropdownItem
+                  <DropdownItemDeprecated
                     isDisabled={!isWritePermission}
                     onClick={() =>
                       setDialogOpen({
@@ -153,7 +155,7 @@ const Header: React.FC<Props> = ({
                     }
                   >
                     {intl.formatMessage(messages.delete)}
-                  </DropdownItem>
+                  </DropdownItemDeprecated>
                 </ReadOnlyTooltip>,
               ]}
             />

@@ -1,8 +1,15 @@
 import './costType.scss';
 
 import type { MessageDescriptor } from '@formatjs/intl/src/types';
-import type { SelectOptionObject } from '@patternfly/react-core';
-import { Select, SelectOption, SelectVariant, Title, TitleSizes } from '@patternfly/react-core';
+
+import {
+	Title,
+	TitleSizes
+} from '@patternfly/react-core';
+import {
+	Select as SelectDeprecated,
+	
+} from '@patternfly/react-core/deprecated';
 import messages from 'locales/messages';
 import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';
@@ -72,7 +79,7 @@ class CostTypeBase extends React.Component<CostTypeProps, CostTypeState> {
     const selection = selectOptions.find((option: CostTypeOption) => option.value === costType);
 
     return (
-      <Select
+      <SelectDeprecated
         className="selectOverride"
         id="costTypeSelect"
         isDisabled={isDisabled}
@@ -85,7 +92,7 @@ class CostTypeBase extends React.Component<CostTypeProps, CostTypeState> {
         {selectOptions.map(option => (
           <SelectOption description={option.desc} key={option.value} value={option} />
         ))}
-      </Select>
+      </SelectDeprecated>
     );
   };
 

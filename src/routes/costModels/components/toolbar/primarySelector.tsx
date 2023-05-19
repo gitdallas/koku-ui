@@ -1,4 +1,7 @@
-import { Select, SelectOption } from '@patternfly/react-core';
+import {
+	Select as SelectDeprecated,
+	
+} from '@patternfly/react-core/deprecated';
 import { FilterIcon } from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import React from 'react';
 import { WithStateMachine } from 'routes/costModels/components/hoc/withStateMachine';
@@ -25,7 +28,7 @@ export const PrimarySelector: React.FC<PrimarySelectorProps> = ({ setPrimary, pr
     >
       {({ current, send }) => {
         return (
-          <Select
+          <SelectDeprecated
             isDisabled={isDisabled}
             toggleIcon={<FilterIcon />}
             isOpen={current.matches('expanded')}
@@ -40,7 +43,7 @@ export const PrimarySelector: React.FC<PrimarySelectorProps> = ({ setPrimary, pr
                 </SelectOption>
               );
             })}
-          </Select>
+          </SelectDeprecated>
         );
       }}
     </WithStateMachine>

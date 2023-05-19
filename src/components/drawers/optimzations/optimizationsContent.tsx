@@ -9,7 +9,7 @@ import {
   TextListItemVariants,
   TextListVariants,
 } from '@patternfly/react-core';
-import { TableComposable, TableVariant, Tbody, Td, Th, Thead, Tr } from '@patternfly/react-table';
+import { Table, TableVariant, Tbody, Td, Th, Thead, Tr } from '@patternfly/react-table';
 import type { RecommendationItem, RecommendationReportData } from 'api/ros/recommendations';
 import { RosPathsType, RosType } from 'api/ros/ros';
 import type { AxiosError } from 'axios';
@@ -223,11 +223,11 @@ class OptimizationsContentBase extends React.Component<OptimizationsContentProps
     const memVariation = hasVariationLimitsMemory ? term.variation.limits.memory.amount : undefined;
 
     return (
-      <TableComposable
+      <Table
         aria-label={intl.formatMessage(messages.optimizationsTableAriaLabel)}
         borders={false}
         hasSelectableRowCaption
-        variant={TableVariant.compact}
+        variant={TableVariant.compact} data-codemods="true"
       >
         <Thead>
           <Tr>
@@ -251,7 +251,7 @@ class OptimizationsContentBase extends React.Component<OptimizationsContentProps
             <Td>{this.getChangeValue(memVariation)}</Td>
           </Tr>
         </Tbody>
-      </TableComposable>
+      </Table>
     );
   };
 
@@ -306,11 +306,11 @@ class OptimizationsContentBase extends React.Component<OptimizationsContentProps
     const memVariation = hasVariationRequestsMemory ? term.variation.requests.memory.amount : undefined;
 
     return (
-      <TableComposable
+      <Table
         aria-label={intl.formatMessage(messages.optimizationsTableAriaLabel)}
         borders={false}
         hasSelectableRowCaption
-        variant={TableVariant.compact}
+        variant={TableVariant.compact} data-codemods="true"
       >
         <Thead>
           <Tr>
@@ -334,7 +334,7 @@ class OptimizationsContentBase extends React.Component<OptimizationsContentProps
             <Td>{this.getChangeValue(memVariation)}</Td>
           </Tr>
         </Tbody>
-      </TableComposable>
+      </Table>
     );
   };
 
