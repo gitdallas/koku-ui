@@ -1,5 +1,5 @@
 import type { IAction, IRow } from '@patternfly/react-table';
-import { ActionsColumn, TableComposable, TableVariant, Tbody, Td, Th, Thead, Tr } from '@patternfly/react-table';
+import { ActionsColumn, Table /* data-codemods */, TableVariant, Tbody, Td, Th, Thead, Tr } from '@patternfly/react-table';
 import { TableGridBreakpoint } from '@patternfly/react-table';
 import messages from 'locales/messages';
 import React from 'react';
@@ -45,7 +45,7 @@ const SourcesTable: React.FC<SourcesTableProps> = ({ canWrite, costModels, intl,
   const rows: (IRow | string[])[] = costModels.length > 0 ? costModels[0].sources.map(source => [source.name]) : [];
 
   return (
-    <TableComposable
+    <Table
       aria-label={intl.formatMessage(messages.costModelsSourceTableAriaLabel)}
       gridBreakPoint={TableGridBreakpoint.grid2xl}
       variant={TableVariant.compact}
@@ -73,7 +73,7 @@ const SourcesTable: React.FC<SourcesTableProps> = ({ canWrite, costModels, intl,
           </Tr>
         ))}
       </Tbody>
-    </TableComposable>
+    </Table>
   );
 };
 

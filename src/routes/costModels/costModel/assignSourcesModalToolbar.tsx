@@ -8,7 +8,7 @@ import {
   ToolbarContent,
   ToolbarFilter,
   ToolbarItem,
-  ToolbarToggleGroup,
+  ToolbarToggleGroup, InputGroupItem,
 } from '@patternfly/react-core';
 import { FilterIcon } from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { SearchIcon } from '@patternfly/react-icons/dist/esm/icons/search-icon';
@@ -28,7 +28,7 @@ interface FilterInputProps {
 const FilterInput: React.FC<FilterInputProps> = ({ id, placeholder = '', value, onChange, onSearch }) => {
   return (
     <InputGroup>
-      <TextInput
+      <InputGroupItem isFill ><TextInput
         value={value}
         placeholder={placeholder}
         id={id}
@@ -39,7 +39,7 @@ const FilterInput: React.FC<FilterInputProps> = ({ id, placeholder = '', value, 
           }
           onSearch(evt);
         }}
-      />
+      /></InputGroupItem>
       <InputGroupText style={{ borderLeft: '0' }}>
         <SearchIcon />
       </InputGroupText>
@@ -83,7 +83,7 @@ export const AssignSourcesToolbarBase: React.FC<AssignSourcesToolbarBaseProps> =
             page={paginationProps.page}
             perPage={paginationProps.perPage}
             titles={{
-              paginationTitle: intl.formatMessage(messages.paginationTitle, {
+              paginationAriaLabel: intl.formatMessage(messages.paginationTitle, {
                 title: intl.formatMessage(messages.costModelsAssignSourcesParen),
                 placement: 'top',
               }),

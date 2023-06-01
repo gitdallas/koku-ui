@@ -1,24 +1,26 @@
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  Dropdown,
-  DropdownItem,
-  KebabToggle,
-  List,
-  ListItem,
-  Split,
-  SplitItem,
-  Tab,
-  Tabs,
-  TabTitleText,
-  TextContent,
-  TextList,
-  TextListItem,
-  TextListItemVariants,
-  TextListVariants,
-  Title,
-  TitleSizes,
+	Breadcrumb,
+	BreadcrumbItem,
+	List,
+	ListItem,
+	Split,
+	SplitItem,
+	Tab,
+	Tabs,
+	TabTitleText,
+	TextContent,
+	TextList,
+	TextListItem,
+	TextListItemVariants,
+	TextListVariants,
+	Title,
+	TitleSizes
 } from '@patternfly/react-core';
+import {
+	Dropdown,
+	DropdownItem,
+	KebabToggle
+} from '@patternfly/react-core/deprecated';
 import type { CostModel } from 'api/costModels';
 import messages from 'locales/messages';
 import React from 'react';

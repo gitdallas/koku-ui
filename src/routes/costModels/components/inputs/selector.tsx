@@ -1,6 +1,20 @@
 import type { MessageDescriptor } from '@formatjs/intl/src/types';
-import type { FormGroupProps, FormSelectProps, SelectOptionObject } from '@patternfly/react-core';
-import { FormGroup, Select, SelectDirection, SelectOption, SelectVariant } from '@patternfly/react-core';
+import {
+	FormGroupProps,
+	FormSelectProps
+} from '@patternfly/react-core';
+import {
+	SelectOptionObject
+} from '@patternfly/react-core/deprecated';
+import {
+	FormGroup
+} from '@patternfly/react-core';
+import {
+	Select,
+	SelectDirection,
+	SelectOption,
+	SelectVariant
+} from '@patternfly/react-core/deprecated';
 import { intl as defaultIntl } from 'components/i18n';
 import React, { useEffect, useState } from 'react';
 import type { WrappedComponentProps } from 'react-intl';

@@ -18,7 +18,7 @@ import {
   TextContent,
   TextInput,
   Title,
-  TitleSizes,
+  TitleSizes, InputGroupItem,
 } from '@patternfly/react-core';
 import type { CostModel } from 'api/costModels';
 import messages from 'locales/messages';
@@ -199,7 +199,7 @@ class UpdateMarkupDialogBase extends React.Component<UpdateMarkupDialogProps, Up
                             ? intl.formatMessage(messages.discountMinus)
                             : intl.formatMessage(messages.markupPlus)}
                         </InputGroupText>
-                        <TextInput
+                        <InputGroupItem isFill ><TextInput
                           aria-label={intl.formatMessage(messages.rate)}
                           id="markup-input-box"
                           isRequired
@@ -210,7 +210,7 @@ class UpdateMarkupDialogBase extends React.Component<UpdateMarkupDialogProps, Up
                           type="text"
                           validated={validated}
                           value={this.state.markup}
-                        />
+                        /></InputGroupItem>
                         <InputGroupText style={styles.percent}>
                           {intl.formatMessage(messages.percentSymbol)}
                         </InputGroupText>

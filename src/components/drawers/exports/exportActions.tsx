@@ -1,4 +1,8 @@
-import { Dropdown, DropdownItem, KebabToggle } from '@patternfly/react-core';
+import {
+	Dropdown,
+	DropdownItem,
+	KebabToggle
+} from '@patternfly/react-core/deprecated';
 import messages from 'locales/messages';
 import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';

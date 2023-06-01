@@ -1,6 +1,6 @@
 import { PageSection, PageSectionVariants } from '@patternfly/react-core';
 import type { ICell, IRowData, ThProps } from '@patternfly/react-table';
-import { ActionsColumn, TableComposable, TableVariant, Tbody, Td, Th, Thead, Tr } from '@patternfly/react-table';
+import { ActionsColumn, Table /* data-codemods */, TableVariant, Tbody, Td, Th, Thead, Tr } from '@patternfly/react-table';
 import { sortable, TableGridBreakpoint } from '@patternfly/react-table';
 import type { CostModel } from 'api/costModels';
 import { intl as defaultIntl } from 'components/i18n';
@@ -116,7 +116,7 @@ class CostModelsTableBase extends React.Component<CostModelsTableProps, CostMode
 
     return (
       <PageSection variant={PageSectionVariants.light}>
-        <TableComposable
+        <Table
           aria-label={intl.formatMessage(messages.costModelsTableAriaLabel)}
           gridBreakPoint={TableGridBreakpoint.grid2xl}
           variant={TableVariant.compact}
@@ -150,7 +150,7 @@ class CostModelsTableBase extends React.Component<CostModelsTableProps, CostMode
               </Tr>
             ))}
           </Tbody>
-        </TableComposable>
+        </Table>
       </PageSection>
     );
   }

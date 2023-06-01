@@ -1,4 +1,8 @@
-import { Dropdown, DropdownItem, KebabToggle } from '@patternfly/react-core';
+import {
+	Dropdown,
+	DropdownItem,
+	KebabToggle
+} from '@patternfly/react-core/deprecated';
 import type { ProviderType } from 'api/providers';
 import type { ReportPathsType } from 'api/reports/report';
 import messages from 'locales/messages';

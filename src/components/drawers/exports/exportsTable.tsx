@@ -8,15 +8,23 @@ import {
   Label,
   Popover,
   Spinner,
-  Title,
-  TitleSizes,
+  EmptyStateHeader, EmptyStateFooter,
 } from '@patternfly/react-core';
 import { DownloadIcon } from '@patternfly/react-icons/dist/esm/icons/download-icon';
 import { ExclamationCircleIcon } from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import { OutlinedClockIcon } from '@patternfly/react-icons/dist/esm/icons/outlined-clock-icon';
 import { PlusCircleIcon } from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import { SyncIcon } from '@patternfly/react-icons/dist/esm/icons/sync-icon';
-import { sortable, SortByDirection, Table, TableBody, TableHeader, TableVariant } from '@patternfly/react-table';
+import {
+	sortable,
+	SortByDirection,
+	TableVariant
+} from '@patternfly/react-table';
+import {
+	Table,
+	TableBody,
+	TableHeader
+} from '@patternfly/react-table/deprecated';
 import type { Query } from 'api/queries/query';
 import { getQuery } from 'api/queries/query';
 import type { Report } from 'api/reports/report';
@@ -169,15 +177,12 @@ class ExportsTableBase extends React.Component<ExportsTableProps, ExportsTableSt
 
     return (
       <EmptyState>
-        <EmptyStateIcon icon={PlusCircleIcon} />
-        <Title headingLevel="h5" size={TitleSizes.lg}>
-          {intl.formatMessage(messages.noExportsStateTitle)}
-        </Title>
-        <EmptyStateBody>{intl.formatMessage(messages.exportsEmptyState)}</EmptyStateBody>
+        <EmptyStateHeader titleText={<>{intl.formatMessage(messages.noExportsStateTitle)}</>} icon={<EmptyStateIcon icon={PlusCircleIcon} />} headingLevel="h5" />
+        <EmptyStateBody>{intl.formatMessage(messages.exportsEmptyState)}</EmptyStateBody><EmptyStateFooter>
         <Button variant="primary" onClick={onClose}>
           {intl.formatMessage(messages.close)}
         </Button>
-      </EmptyState>
+      </EmptyStateFooter></EmptyState>
     );
   };
 

@@ -5,8 +5,7 @@ import {
   EmptyStateBody,
   EmptyStateIcon,
   EmptyStateVariant,
-  Title,
-  TitleSizes,
+  EmptyStateHeader, EmptyStateFooter,
 } from '@patternfly/react-core';
 import { ExternalLinkAltIcon } from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import { PlusCircleIcon } from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
@@ -82,12 +81,9 @@ class NoProvidersStateBase extends React.Component<NoProvidersStateProps, any> {
         icon = CostIcon;
     }
     return (
-      <EmptyState variant={EmptyStateVariant.large} className="pf-m-redhat-font">
-        <EmptyStateIcon icon={icon ? icon : PlusCircleIcon} />
-        <Title headingLevel="h1" size={TitleSizes.lg}>
-          {intl.formatMessage(titleKey)}
-        </Title>
-        <EmptyStateBody>{intl.formatMessage(descKey)}</EmptyStateBody>
+      <EmptyState variant={EmptyStateVariant.lg} className="pf-m-redhat-font">
+        <EmptyStateHeader titleText={<>{intl.formatMessage(titleKey)}</>} icon={<EmptyStateIcon icon={icon ? icon : PlusCircleIcon} />} headingLevel="h1" />
+        <EmptyStateBody>{intl.formatMessage(descKey)}</EmptyStateBody><EmptyStateFooter>
         {docUrlKey && textKey ? (
           <div style={styles.viewSources}>{this.getDocLink(textKey, docUrlKey)}</div>
         ) : (
@@ -95,7 +91,7 @@ class NoProvidersStateBase extends React.Component<NoProvidersStateProps, any> {
             {intl.formatMessage(messages.noProvidersStateGetStarted)}
           </Button>
         )}
-      </EmptyState>
+      </EmptyStateFooter></EmptyState>
     );
   }
 }

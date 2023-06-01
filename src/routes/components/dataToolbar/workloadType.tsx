@@ -1,7 +1,16 @@
 import './dataToolbar.scss';
 
-import type { SelectOptionObject, ToolbarChipGroup } from '@patternfly/react-core';
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+import {
+	ToolbarChipGroup
+} from '@patternfly/react-core';
+import {
+	SelectOptionObject
+} from '@patternfly/react-core/deprecated';
+import {
+	Select,
+	SelectOption,
+	SelectVariant
+} from '@patternfly/react-core/deprecated';
 import messages from 'locales/messages';
 import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';

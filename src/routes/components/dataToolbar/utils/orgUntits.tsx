@@ -1,5 +1,17 @@
-import type { SelectOptionObject, ToolbarChipGroup } from '@patternfly/react-core';
-import { Select, SelectOption, SelectVariant, ToolbarFilter } from '@patternfly/react-core';
+import {
+	ToolbarChipGroup
+} from '@patternfly/react-core';
+import {
+	SelectOptionObject
+} from '@patternfly/react-core/deprecated';
+import {
+	ToolbarFilter
+} from '@patternfly/react-core';
+import {
+	Select,
+	SelectOption,
+	SelectVariant
+} from '@patternfly/react-core/deprecated';
 import type { Org } from 'api/orgs/org';
 import { intl } from 'components/i18n';
 import messages from 'locales/messages';

@@ -1,10 +1,10 @@
 import {
-  Dropdown,
-  DropdownItem,
-  DropdownPosition,
-  DropdownToggle,
-  DropdownToggleCheckbox,
-} from '@patternfly/react-core';
+	Dropdown,
+	DropdownItem,
+	DropdownPosition,
+	DropdownToggle,
+	DropdownToggleCheckbox
+} from '@patternfly/react-core/deprecated';
 import { intl } from 'components/i18n';
 import messages from 'locales/messages';
 import React from 'react';

@@ -1,5 +1,13 @@
 import type { PaginationProps } from '@patternfly/react-core';
-import { Pagination, PaginationVariant, Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+import {
+	Pagination,
+	PaginationVariant
+} from '@patternfly/react-core';
+import {
+	Select,
+	SelectOption,
+	SelectVariant
+} from '@patternfly/react-core/deprecated';
 import { FilterIcon } from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { intl as defaultIntl } from 'components/i18n';
 import messages from 'locales/messages';

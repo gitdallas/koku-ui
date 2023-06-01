@@ -1,14 +1,16 @@
 import type { ToolbarProps } from '@patternfly/react-core';
 import {
-  Dropdown,
-  DropdownItem,
-  DropdownToggle,
-  InputGroup,
-  InputGroupText,
-  TextInput,
-  Toolbar,
-  ToolbarFilter,
+	InputGroup,
+	InputGroupText,
+	TextInput,
+	Toolbar,
+	ToolbarFilter, InputGroupItem
 } from '@patternfly/react-core';
+import {
+	Dropdown,
+	DropdownItem,
+	DropdownToggle
+} from '@patternfly/react-core/deprecated';
 import { SearchIcon } from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import { intl as defaultIntl } from 'components/i18n';
 import messages from 'locales/messages';
@@ -35,7 +37,7 @@ interface FilterInputProps {
 const FilterInput: React.FC<FilterInputProps> = ({ placeholder = '', value, onChange, onKeyPress }) => {
   return (
     <InputGroup>
-      <TextInput
+      <InputGroupItem isFill ><TextInput
         aria-label={placeholder}
         value={value}
         placeholder={placeholder}
@@ -46,7 +48,7 @@ const FilterInput: React.FC<FilterInputProps> = ({ placeholder = '', value, onCh
           }
           onKeyPress(evt);
         }}
-      />
+      /></InputGroupItem>
       <InputGroupText style={{ borderLeft: '0' }}>
         <SearchIcon />
       </InputGroupText>
@@ -300,7 +302,7 @@ const SourceTypeFilterBase: React.FC<SourceTypeFilterProps> = ({
         isOpen={isOpen}
         toggle={
           <DropdownToggle
-            onToggle={(value: boolean) => {
+            onToggle={(_event, value: boolean) => {
               setIsOpen(value);
             }}
             id={id}

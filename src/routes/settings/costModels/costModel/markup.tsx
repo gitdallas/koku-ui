@@ -1,16 +1,10 @@
+import { Card, CardBody, CardHeader, Title, TitleSizes } from '@patternfly/react-core';
 import {
-  Card,
-  CardActions,
-  CardBody,
-  CardHeader,
-  CardHeaderMain,
-  Dropdown,
-  DropdownItem,
-  DropdownPosition,
-  KebabToggle,
-  Title,
-  TitleSizes,
-} from '@patternfly/react-core';
+	Dropdown,
+	DropdownItem,
+	DropdownPosition,
+	KebabToggle
+} from '@patternfly/react-core/deprecated';
 import type { CostModel } from 'api/costModels';
 import messages from 'locales/messages';
 import React from 'react';
@@ -49,14 +43,7 @@ const MarkupCardBase: React.FC<Props> = ({
     <>
       {isUpdateDialogOpen && <UpdateMarkupDialog current={current} />}
       <Card style={styles.card}>
-        <CardHeader>
-          <CardHeaderMain>
-            <Title headingLevel="h2" size={TitleSizes.md}>
-              {intl.formatMessage(messages.markupOrDiscount)}
-            </Title>
-          </CardHeaderMain>
-          <CardActions>
-            <Dropdown
+        <CardHeader actions={{ actions: <><Dropdown
               toggle={<KebabToggle onToggle={setDropdownIsOpen} />}
               isOpen={dropdownIsOpen}
               onSelect={() => setDropdownIsOpen(false)}
@@ -73,8 +60,13 @@ const MarkupCardBase: React.FC<Props> = ({
                   </DropdownItem>
                 </ReadOnlyTooltip>,
               ]}
-            />
-          </CardActions>
+            /></>, hasNoOffset: false, className: undefined}} >
+          
+            <Title headingLevel="h2" size={TitleSizes.md}>
+              {intl.formatMessage(messages.markupOrDiscount)}
+            </Title>
+          
+          
         </CardHeader>
         <CardBody style={styles.cardDescription}>{intl.formatMessage(messages.markupOrDiscountDesc)}</CardBody>
         <CardBody isFilled />

@@ -1,5 +1,5 @@
 import { Pagination, Toolbar, ToolbarContent, ToolbarItem } from '@patternfly/react-core';
-import { TableComposable, TableVariant, Tbody, Td, Th, Thead, Tr } from '@patternfly/react-table';
+import { Table /* data-codemods */, TableVariant, Tbody, Td, Th, Thead, Tr } from '@patternfly/react-table';
 import type { CostModel } from 'api/costModels';
 import type { Provider } from 'api/providers';
 import messages from 'locales/messages';
@@ -184,7 +184,7 @@ class AddSourcesStepBase extends React.Component<AddSourcesStepProps, AddSources
           }}
         />
         {sources.length > 0 && (
-          <TableComposable
+          <Table
             aria-label={intl.formatMessage(messages.costModelsAssignSources, { count: 1 })}
             variant={TableVariant.compact}
           >
@@ -205,7 +205,7 @@ class AddSourcesStepBase extends React.Component<AddSourcesStepProps, AddSources
                 <Tr key={rowIndex}>
                   <Td
                     select={{
-                      disable: s.disableSelection,
+                      isDisabled: s.disableSelection,
                       onSelect: _evt => onSelect(_evt, !s.selected, rowIndex),
                       isSelected: s.selected,
                       rowIndex,
@@ -217,7 +217,7 @@ class AddSourcesStepBase extends React.Component<AddSourcesStepProps, AddSources
                 </Tr>
               ))}
             </Tbody>
-          </TableComposable>
+          </Table>
         )}
         {sources.length === 0 && (
           <EmptyFilterState filter={this.props.filter} subTitle={messages.emptyFilterSourceStateSubtitle} />
@@ -231,7 +231,7 @@ class AddSourcesStepBase extends React.Component<AddSourcesStepProps, AddSources
                 perPage={this.props.pagination.perPage}
                 page={this.props.pagination.page}
                 titles={{
-                  paginationTitle: intl.formatMessage(messages.paginationTitle, {
+                  paginationAriaLabel: intl.formatMessage(messages.paginationTitle, {
                     title: intl.formatMessage(messages.costModelsAssignSourcesParen),
                     placement: 'bottom',
                   }),

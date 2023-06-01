@@ -1,4 +1,8 @@
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+import {
+	Select,
+	SelectOption,
+	SelectVariant
+} from '@patternfly/react-core/deprecated';
 import React from 'react';
 import { WithStateMachine } from 'routes/costModels/components/hoc/withStateMachine';
 import { selectMachineState } from 'routes/costModels/components/logic/selectStateMachine';

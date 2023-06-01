@@ -14,7 +14,7 @@ import {
   TextInput,
   TextVariants,
   Title,
-  TitleSizes,
+  TitleSizes, InputGroupItem,
 } from '@patternfly/react-core';
 import messages from 'locales/messages';
 import React from 'react';
@@ -126,7 +126,7 @@ class MarkupWithDistributionBase extends React.Component<MarkupWithDistributionP
                                 ? intl.formatMessage(messages.discountMinus)
                                 : intl.formatMessage(messages.markupPlus)}
                             </InputGroupText>
-                            <TextInput
+                            <InputGroupItem isFill ><TextInput
                               aria-label={intl.formatMessage(messages.rate)}
                               id="markup-input-box"
                               isRequired
@@ -137,7 +137,7 @@ class MarkupWithDistributionBase extends React.Component<MarkupWithDistributionP
                               type="text"
                               validated={validated}
                               value={markup}
-                            />
+                            /></InputGroupItem>
                             <InputGroupText style={costCalcStyles.percent}>
                               {intl.formatMessage(messages.percentSymbol)}
                             </InputGroupText>

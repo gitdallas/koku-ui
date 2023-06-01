@@ -1,8 +1,18 @@
 import './costDistribution.scss';
 
 import type { MessageDescriptor } from '@formatjs/intl/src/types';
-import type { SelectOptionObject } from '@patternfly/react-core';
-import { Select, SelectOption, SelectVariant, Title, TitleSizes } from '@patternfly/react-core';
+import {
+	SelectOptionObject
+} from '@patternfly/react-core/deprecated';
+import {
+	Title,
+	TitleSizes
+} from '@patternfly/react-core';
+import {
+	Select,
+	SelectOption,
+	SelectVariant
+} from '@patternfly/react-core/deprecated';
 import messages from 'locales/messages';
 import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';

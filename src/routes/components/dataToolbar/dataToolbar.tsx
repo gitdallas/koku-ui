@@ -814,7 +814,7 @@ export class DataToolbarBase extends React.Component<DataToolbarProps, DataToolb
                 {datePicker}
               </ToolbarGroup>
             )}
-            <ToolbarItem alignment={{ default: 'alignRight' }} variant="pagination">
+            <ToolbarItem align={{ default: 'alignRight' }} variant="pagination">
               {pagination}
             </ToolbarItem>
           </ToolbarContent>

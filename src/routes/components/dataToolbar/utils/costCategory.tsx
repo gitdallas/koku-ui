@@ -1,5 +1,13 @@
 import type { ToolbarChipGroup } from '@patternfly/react-core';
-import { Select, SelectOption, SelectVariant, ToolbarFilter, ToolbarItem } from '@patternfly/react-core';
+import {
+	ToolbarFilter,
+	ToolbarItem
+} from '@patternfly/react-core';
+import {
+	Select,
+	SelectOption,
+	SelectVariant
+} from '@patternfly/react-core/deprecated';
 import type { Resource } from 'api/resources/resource';
 import type { ResourcePathsType } from 'api/resources/resource';
 import { intl } from 'components/i18n';

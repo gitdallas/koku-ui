@@ -1,13 +1,15 @@
 import {
-  FormGroup,
-  SelectDirection,
-  Stack,
-  StackItem,
-  TextArea,
-  TextInput,
-  Title,
-  TitleSizes,
+	FormGroup,
+	Stack,
+	StackItem,
+	TextArea,
+	TextInput,
+	Title,
+	TitleSizes
 } from '@patternfly/react-core';
+import {
+	SelectDirection
+} from '@patternfly/react-core/deprecated';
 import messages from 'locales/messages';
 import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';

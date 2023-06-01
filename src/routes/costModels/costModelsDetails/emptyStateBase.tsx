@@ -1,4 +1,4 @@
-import { EmptyState, EmptyStateBody, EmptyStateIcon, Title, TitleSizes } from '@patternfly/react-core';
+import { EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStateHeader, EmptyStateFooter } from '@patternfly/react-core';
 import React from 'react';
 
 interface EmptyStateBaseProps {
@@ -11,13 +11,10 @@ interface EmptyStateBaseProps {
 function EmptyStateBase(props: EmptyStateBaseProps): JSX.Element {
   return (
     <EmptyState className="pf-m-redhat-font">
-      <EmptyStateIcon icon={props.icon} />
-      <Title headingLevel="h2" size={TitleSizes.lg}>
-        {props.title}
-      </Title>
-      <EmptyStateBody>{props.description}</EmptyStateBody>
+      <EmptyStateHeader titleText={<>{props.title}</>} icon={<EmptyStateIcon icon={props.icon} />} headingLevel="h2" />
+      <EmptyStateBody>{props.description}</EmptyStateBody><EmptyStateFooter>
       {props.actions ? props.actions : null}
-    </EmptyState>
+    </EmptyStateFooter></EmptyState>
   );
 }
 

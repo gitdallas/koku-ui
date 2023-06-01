@@ -1,7 +1,7 @@
-import { Bullseye, EmptyState, EmptyStateBody, EmptyStateIcon, Spinner } from '@patternfly/react-core';
+import { Bullseye, EmptyState, EmptyStateBody, EmptyStateIcon, Spinner, EmptyStateHeader } from '@patternfly/react-core';
 import { CalculatorIcon } from '@patternfly/react-icons/dist/esm/icons/calculator-icon';
 import type { ThProps } from '@patternfly/react-table';
-import { SortByDirection, TableComposable, TableVariant, Tbody, Td, Th, Thead, Tr } from '@patternfly/react-table';
+import { SortByDirection, Table /* data-codemods */, TableVariant, Tbody, Td, Th, Thead, Tr } from '@patternfly/react-table';
 import messages from 'locales/messages';
 import type { ReactNode } from 'react';
 import React from 'react';
@@ -47,8 +47,7 @@ class SelectableTable extends React.Component<SelectableTableProps, any> {
     }
     return (
       <EmptyState>
-        <EmptyStateIcon icon={CalculatorIcon} />
-        <EmptyStateBody>{intl.formatMessage(messages.detailsEmptyState)}</EmptyStateBody>
+        <EmptyStateHeader icon={<EmptyStateIcon icon={CalculatorIcon} />} /><EmptyStateBody>{intl.formatMessage(messages.detailsEmptyState)}</EmptyStateBody>
       </EmptyState>
     );
   };
@@ -102,7 +101,7 @@ class SelectableTable extends React.Component<SelectableTableProps, any> {
 
     return (
       <>
-        <TableComposable
+        <Table
           aria-label={intl.formatMessage(messages.selectableTableAriaLabel)}
           gridBreakPoint="grid-2xl"
           hasSelectableRowCaption
@@ -138,7 +137,7 @@ class SelectableTable extends React.Component<SelectableTableProps, any> {
                 <Tr
                   aria-label={intl.formatMessage(messages.selectableTableRowAriaLabel)}
                   isSelectable
-                  isHoverable
+                  isClickable
                   isRowSelected={row.selected}
                   onRowClick={_event => this.handleOnRowClick(_event, rowIndex)}
                   key={`row-${rowIndex}`}
@@ -169,7 +168,7 @@ class SelectableTable extends React.Component<SelectableTableProps, any> {
               ))
             )}
           </Tbody>
-        </TableComposable>
+        </Table>
         {rows.length === 0 && <div style={styles.emptyState}>{this.getEmptyState()}</div>}
       </>
     );
