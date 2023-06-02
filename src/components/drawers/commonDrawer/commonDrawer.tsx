@@ -1,5 +1,5 @@
 import './commonDrawer.scss';
-
+import '@patternfly/patternfly/patternfly.css';
 import { Drawer, DrawerContent, DrawerContentBody } from '@patternfly/react-core';
 import { ExportsDrawer } from 'components/drawers';
 import { OptimizationsDrawer } from 'components/drawers';
