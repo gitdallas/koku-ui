@@ -125,7 +125,7 @@ const Header: React.FC<Props> = ({
           </SplitItem>
           <SplitItem>
             <Dropdown
-              toggle={<KebabToggle onToggle={setDropdownIsOpen} />}
+              toggle={<KebabToggle onToggle={(_event, isOpen) => setDropdownIsOpen(isOpen)} />}
               isOpen={dropdownIsOpen}
               onSelect={() => setDropdownIsOpen(false)}
               isPlain

@@ -54,7 +54,7 @@ export const getExcludeSelect = ({
         isDisabled={isDisabled && !hasFilters(filters)}
         isOpen={isExcludeSelectOpen}
         onSelect={handleOnExcludeSelect}
-        onToggle={handleOnExcludeToggle}
+        onToggle={(_event, isExpanded) => handleOnExcludeToggle(isExpanded)}
         selections={selection}
         variant={SelectVariant.single}
       >

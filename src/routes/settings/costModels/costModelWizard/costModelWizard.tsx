@@ -1,9 +1,9 @@
-import type { WizardStepFunctionType } from '@patternfly/react-core';
 import {
 	Title,
 	TitleSizes
 } from '@patternfly/react-core';
 import {
+  WizardStepFunctionType,
 	Wizard
 } from '@patternfly/react-core/deprecated';
 import { Button, Modal } from '@patternfly/react-core';

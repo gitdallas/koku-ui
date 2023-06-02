@@ -105,7 +105,7 @@ class GeneralInformation extends React.Component<GeneralInformationProps, any> {
                     id="name"
                     name="name"
                     value={name}
-                    onChange={(_event, value) => onNameChange(value)}
+                    onChange={onNameChange}
                   />
                 </FormGroup>
                 <FormGroup
@@ -123,7 +123,7 @@ class GeneralInformation extends React.Component<GeneralInformationProps, any> {
                     name="description"
                     value={description}
                     validated={descriptionErrors(description) === null ? 'default' : 'error'}
-                    onChange={(_event, value) => onDescChange(value)}
+                    onChange={(_event, value) => onDescChange}
                   />
                 </FormGroup>
                 <Selector

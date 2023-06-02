@@ -262,7 +262,7 @@ export const getCategorySelect = ({
         isDisabled={isDisabled && !hasFilters(filters)}
         isOpen={isCategorySelectOpen}
         onSelect={handleOnCategorySelect}
-        onToggle={handleOnCategoryToggle}
+        onToggle={(_event, isExpanded) => handleOnCategoryToggle(isExpanded)}
         selections={selection}
         toggleIcon={<FilterIcon />}
         variant={SelectVariant.single}

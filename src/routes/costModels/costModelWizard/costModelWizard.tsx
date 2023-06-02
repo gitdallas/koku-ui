@@ -1,10 +1,10 @@
-import type { WizardStepFunctionType } from '@patternfly/react-core';
 import {
 	Title,
 	TitleSizes
 } from '@patternfly/react-core';
 import {
-	Wizard
+	Wizard,
+  WizardStepFunctionType
 } from '@patternfly/react-core/deprecated';
 import { Button, Modal } from '@patternfly/react-core';
 import { ExclamationTriangleIcon } from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';

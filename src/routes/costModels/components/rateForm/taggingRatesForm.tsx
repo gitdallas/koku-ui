@@ -53,8 +53,8 @@ const TaggingRatesFormBase: React.FC<TaggingRatesFormProps> = ({
                 label={messages.costModelsTagRateTableValue}
                 placeholder={intl.formatMessage(messages.costModelsEnterTagValue)}
                 value={tag.tagValue}
-                onChange={value => updateTag({ tagValue: value }, ix)}
-                validated={tagValues[ix].isTagValueDirty && errors.tagValueValues[ix] ? 'error' : 'default'}
+                onChange={(_event, value) => updateTag({ tagValue: value }, ix)}
+                // validated={tagValues[ix].isTagValueDirty && errors.tagValueValues[ix] ? 'error' : 'default'} TODO:
                 helperTextInvalid={errors.tagValueValues[ix]}
               />
             </SplitItem>
@@ -63,7 +63,7 @@ const TaggingRatesFormBase: React.FC<TaggingRatesFormProps> = ({
                 currencyUnits={currencyUnits}
                 fieldId={`rate_${ix}`}
                 helperTextInvalid={errors.tagValues[ix]}
-                onChange={value => updateTag({ value }, ix)}
+                onChange={(_event, value) => updateTag({ value }, ix)}
                 style={style}
                 validated={tagValues[ix].isDirty && errors.tagValues[ix] ? 'error' : 'default'}
                 value={tag.inputValue}
@@ -74,10 +74,10 @@ const TaggingRatesFormBase: React.FC<TaggingRatesFormProps> = ({
                 style={style}
                 id={`desc_${ix}`}
                 label={messages.description}
-                validated={errors.tagDescription[ix] ? 'error' : 'default'}
+                // validated={errors.tagDescription[ix] ? 'error' : 'default'} TODO:
                 placeholder={intl.formatMessage(messages.costModelsEnterTagDesc)}
                 value={tag.description}
-                onChange={value => updateTag({ description: value }, ix)}
+                onChange={(_event, value) => updateTag({ description: value }, ix)}
                 helperTextInvalid={errors.tagDescription[ix]}
               />
             </SplitItem>

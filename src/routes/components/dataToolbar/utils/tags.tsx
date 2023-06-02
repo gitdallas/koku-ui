@@ -57,7 +57,7 @@ export const getTagKeySelect = ({
         variant={SelectVariant.typeahead}
         typeAheadAriaLabel={intl.formatMessage(messages.filterByTagKeyAriaLabel)}
         onClear={handleOnTagKeyClear}
-        onToggle={handleOnTagKeyToggle}
+        onToggle={(_event, isExpanded) => handleOnTagKeyToggle(isExpanded)}
         onSelect={handleOnTagKeySelect}
         isOpen={isTagKeySelectExpanded}
         placeholderText={intl.formatMessage(messages.chooseKeyPlaceholder)}

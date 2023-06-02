@@ -104,7 +104,6 @@ class SelectableTable extends React.Component<SelectableTableProps, any> {
         <Table
           aria-label={intl.formatMessage(messages.selectableTableAriaLabel)}
           gridBreakPoint="grid-2xl"
-          hasSelectableRowCaption
           variant={TableVariant.compact}
         >
           <Thead>

@@ -115,7 +115,7 @@ const SelectorBase: React.FC<SelectorProps> = ({
         onToggle={() => setIsOpen(!isOpen)}
         onSelect={(e, sel: SelectorOption) => {
           setSelection(sel);
-          onChange(sel.value, null);
+          onChange(null, sel.value);
           setIsOpen(false);
         }}
         selections={selection}

@@ -59,7 +59,7 @@ export const getCostCategoryKeySelect = ({
         variant={SelectVariant.typeahead}
         typeAheadAriaLabel={intl.formatMessage(messages.filterByCostCategoryKeyAriaLabel)}
         onClear={handleOnCostCategoryKeyClear}
-        onToggle={handleOnCostCategoryKeyToggle}
+        onToggle={(_event, isExpanded) => handleOnCostCategoryKeyToggle(isExpanded)}
         onSelect={handleOnCostCategoryKeySelect}
         isOpen={isCostCategoryKeySelectExpanded}
         placeholderText={intl.formatMessage(messages.chooseKeyPlaceholder)}

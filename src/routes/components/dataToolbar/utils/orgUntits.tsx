@@ -90,7 +90,7 @@ export const getOrgUnitSelect = ({
         className="selectOverride"
         variant={SelectVariant.checkbox}
         aria-label={intl.formatMessage(messages.filterByOrgUnitAriaLabel)}
-        onToggle={handleOnOrgUnitToggle}
+        onToggle={(_event, isExpanded) => handleOnOrgUnitToggle(isExpanded)}
         onSelect={handleOnOrgUnitSelect}
         selections={selections}
         isOpen={isOrgUnitSelectExpanded}

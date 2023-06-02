@@ -41,7 +41,8 @@ const RateFormBase: React.FC<RateFormProps> = ({ currencyUnits, intl = defaultIn
     setTagKey,
     step,
     taggingRates: {
-      tagKey: { value: tagKey, isDirty: isTagKeyDirty },
+      tagKey: { value: tagKey },
+      // tagKey: { value: tagKey, isDirty: isTagKeyDirty }, TODO:?
       defaultTag,
       tagValues,
     },

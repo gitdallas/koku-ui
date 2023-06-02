@@ -72,7 +72,7 @@ export const getBulkSelect = ({
               }}
             />,
           ]}
-          onToggle={handleOnBulkSelectToggle}
+          onToggle={(_event, isExpanded) => handleOnBulkSelectToggle}
         >
           {numSelected !== 0 && (
             <React.Fragment>{intl.formatMessage(messages.selected, { value: numSelected })}</React.Fragment>
