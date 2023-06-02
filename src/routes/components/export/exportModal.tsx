@@ -5,8 +5,11 @@ import {
   ButtonVariant,
   Form,
   FormGroup,
+  FormHelperText,
   Grid,
   GridItem,
+  HelperText,
+  HelperTextItem,
   Modal,
   Radio,
   TextInput,
@@ -229,10 +232,8 @@ export class ExportModalBase extends React.Component<ExportModalProps, ExportMod
               <GridItem span={12}>
                 <FormGroup
                   fieldId="exportName"
-                  // helperTextInvalid={helpText ? intl.formatMessage(helpText) : undefined}
                   label={intl.formatMessage(messages.names, { count: 1 })}
                   isRequired
-                  // validated={validated} TODO: Use FormHelperText, HelperText, and HelperTextItem directly inside children  
                 >
                   <TextInput
                     isRequired
@@ -242,6 +243,15 @@ export class ExportModalBase extends React.Component<ExportModalProps, ExportMod
                     value={defaultName}
                     onChange={this.handleNameChange}
                   />
+                  {validated === "error" && helpText && (
+                    <FormHelperText>
+                      <HelperText>
+                        <HelperTextItem variant="error">
+                          {intl.formatMessage(helpText)}
+                        </HelperTextItem>
+                      </HelperText>
+                    </FormHelperText>
+                  )}
                 </FormGroup>
               </GridItem>
             )}
