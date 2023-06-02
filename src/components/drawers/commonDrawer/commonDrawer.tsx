@@ -57,7 +57,7 @@ class CommonDrawerBase extends React.Component<CommonDrawerProps> {
     return (
       <Drawer className="drawerOverride" isExpanded={isExpanded} onExpand={this.handleExpand}>
         <DrawerContent panelContent={this.getPanelContent()}>
-          <DrawerContentBody className="pf-u-display-flex pf-u-flex-direction-column">{children}</DrawerContentBody>
+          <DrawerContentBody className="pf-v5-u-display-flex pf-v5-u-flex-direction-column">{children}</DrawerContentBody>
         </DrawerContent>
       </Drawer>
     );
