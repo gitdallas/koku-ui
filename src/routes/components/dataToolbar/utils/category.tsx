@@ -102,7 +102,7 @@ export const getCategoryInput = ({
               id={`category-input-${categoryOption.key}`}
               type="search"
               aria-label={intl.formatMessage(messages.filterByInputAriaLabel, { value: categoryOption.key })}
-              onChange={handleOnCategoryInputChange}
+              onChange={(_event, value) => handleOnCategoryInputChange(value)}
               value={categoryInput}
               placeholder={intl.formatMessage(messages.filterByPlaceholder, { value: categoryOption.key })}
               onKeyDown={evt => handleOnCategoryInput(evt, categoryOption.key)}

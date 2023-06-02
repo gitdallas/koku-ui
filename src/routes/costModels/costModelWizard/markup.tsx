@@ -116,9 +116,9 @@ class MarkupWithDistributionBase extends React.Component<MarkupWithDistributionP
                       <Form>
                         <FormGroup
                           fieldId="markup-input-box"
-                          helperTextInvalid={helpText ? intl.formatMessage(helpText) : undefined}
+                          // helperTextInvalid={helpText ? intl.formatMessage(helpText) : undefined} TODO:
                           style={costCalcStyles.rateContainer}
-                          validated={validated}
+                          // validated={validated}
                         >
                           <InputGroup>
                             <InputGroupText style={costCalcStyles.sign}>
@@ -131,7 +131,7 @@ class MarkupWithDistributionBase extends React.Component<MarkupWithDistributionP
                               id="markup-input-box"
                               isRequired
                               onKeyDown={handleOnKeyDown}
-                              onChange={handleMarkupDiscountChange}
+                              onChange={(_event, value) => handleMarkupDiscountChange(value)}
                               placeholder={'0'}
                               style={costCalcStyles.inputField}
                               type="text"

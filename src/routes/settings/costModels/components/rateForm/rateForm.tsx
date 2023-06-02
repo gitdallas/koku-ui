@@ -101,7 +101,7 @@ const RateFormBase: React.FC<RateFormProps> = ({ currencyUnits, intl = defaultIn
         id="description"
         label={messages.description}
         value={description}
-        validated={errors.description ? 'error' : 'default'}
+        // validated={errors.description ? 'error' : 'default'}
         helperTextInvalid={errors.description}
         onChange={setDescription}
       />

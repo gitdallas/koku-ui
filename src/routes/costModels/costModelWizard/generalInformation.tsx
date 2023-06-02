@@ -92,8 +92,8 @@ class GeneralInformation extends React.Component<GeneralInformationProps, any> {
             <StackItem>
               <Form style={styles.form}>
                 <FormGroup
-                  helperTextInvalid={nameErrors(name) && intl.formatMessage(nameErrors(name))}
-                  validated={nameErrors(name) === null || !dirtyName ? 'default' : 'error'}
+                  // helperTextInvalid={nameErrors(name) && intl.formatMessage(nameErrors(name))}
+                  // validated={nameErrors(name) === null || !dirtyName ? 'default' : 'error'} TODO:
                   label={intl.formatMessage(messages.names, { count: 1 })}
                   isRequired
                   fieldId="name"
@@ -105,14 +105,14 @@ class GeneralInformation extends React.Component<GeneralInformationProps, any> {
                     id="name"
                     name="name"
                     value={name}
-                    onChange={onNameChange}
+                    onChange={(_event, value) => onNameChange(value)}
                   />
                 </FormGroup>
                 <FormGroup
-                  helperTextInvalid={
-                    descriptionErrors(description) && intl.formatMessage(descriptionErrors(description))
-                  }
-                  validated={descriptionErrors(description) === null ? 'default' : 'error'}
+                  // helperTextInvalid={
+                  //   descriptionErrors(description) && intl.formatMessage(descriptionErrors(description))
+                  // }
+                  // validated={descriptionErrors(description) === null ? 'default' : 'error'} TODO:
                   label={intl.formatMessage(messages.description)}
                   fieldId="description"
                 >
@@ -123,7 +123,7 @@ class GeneralInformation extends React.Component<GeneralInformationProps, any> {
                     name="description"
                     value={description}
                     validated={descriptionErrors(description) === null ? 'default' : 'error'}
-                    onChange={onDescChange}
+                    onChange={(_event, value) => onDescChange(value)}
                   />
                 </FormGroup>
                 <Selector

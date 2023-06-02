@@ -69,7 +69,7 @@ class WorkloadTypeBase extends React.Component<WorkloadTypeProps, WorkloadTypeSt
         isDisabled={isDisabled}
         variant={SelectVariant.checkbox}
         aria-label={intl.formatMessage(messages.filterByWorkloadTypeAriaLabel)}
-        onToggle={this.onToggle}
+        onToggle={(_event, isExpanded) => this.onToggle(isExpanded)}
         onSelect={onSelect}
         selections={selections}
         isOpen={isWorkloadTypeExpanded}

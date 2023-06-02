@@ -44,8 +44,8 @@ const RateInputBase: React.FC<RateInputBaseProps> = ({
       style={style}
       fieldId={fieldId}
       label={label !== null && typeof label === 'object' ? intl.formatMessage(label) : label}
-      helperTextInvalid={helpText !== null && typeof helpText === 'object' ? intl.formatMessage(helpText) : helpText}
-      validated={validated}
+      // helperTextInvalid={helpText !== null && typeof helpText === 'object' ? intl.formatMessage(helpText) : helpText}
+      // validated={validated} TODO:
     >
       <InputGroup>
         <InputGroupText style={styles.currency}>

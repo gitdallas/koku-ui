@@ -101,7 +101,7 @@ const RateFormBase: React.FC<RateFormProps> = ({ currencyUnits, intl = defaultIn
         id="description"
         label={messages.description}
         value={description}
-        validated={errors.description ? 'error' : 'default'}
+        // validated={errors.description ? 'error' : 'default'} TODO:
         helperTextInvalid={errors.description}
         onChange={setDescription}
       />
@@ -212,7 +212,7 @@ const RateFormBase: React.FC<RateFormProps> = ({ currencyUnits, intl = defaultIn
                 id="tag-key"
                 label={messages.costModelsFilterTagKey}
                 placeholder={intl.formatMessage(messages.costModelsEnterTagKey)}
-                validated={errors.tagKey && isTagKeyDirty ? 'error' : 'default'}
+                // validated={errors.tagKey && isTagKeyDirty ? 'error' : 'default'} TODO:
                 helperTextInvalid={errors.tagKey}
               />
               <TaggingRatesForm

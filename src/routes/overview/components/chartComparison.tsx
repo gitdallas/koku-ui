@@ -89,7 +89,7 @@ class ChartComparisonBase extends React.Component<ChartComparisonProps, ChartCom
     });
   };
 
-  private handleToggle = isSelectOpen => {
+  private handleToggle = (_event, isSelectOpen) => {
     this.setState({ isSelectOpen });
   };
 

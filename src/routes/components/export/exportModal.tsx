@@ -112,7 +112,7 @@ export class ExportModalBase extends React.Component<ExportModalProps, ExportMod
     this.setState({ timeScope: event.currentTarget.value });
   };
 
-  private handleNameChange = (_, event) => {
+  private handleNameChange = (event, value) => {
     this.setState({ name: event.currentTarget.value });
   };
 
@@ -229,10 +229,10 @@ export class ExportModalBase extends React.Component<ExportModalProps, ExportMod
               <GridItem span={12}>
                 <FormGroup
                   fieldId="exportName"
-                  helperTextInvalid={helpText ? intl.formatMessage(helpText) : undefined}
+                  // helperTextInvalid={helpText ? intl.formatMessage(helpText) : undefined}
                   label={intl.formatMessage(messages.names, { count: 1 })}
                   isRequired
-                  validated={validated}
+                  // validated={validated} TODO: Use FormHelperText, HelperText, and HelperTextItem directly inside children  
                 >
                   <TextInput
                     isRequired

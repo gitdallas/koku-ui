@@ -11,7 +11,7 @@ interface SimpleInputOwnProps {
   label?: MessageDescriptor | string;
 }
 
-type SimpleInputFormGroupProps = Pick<FormGroupProps, 'onBlur' | 'isRequired' | 'placeholder' | 'style' | 'validated'>;
+type SimpleInputFormGroupProps = Pick<FormGroupProps, 'onBlur' | 'isRequired' | 'placeholder' | 'style'>;
 type SimpleInputTextInputProps = Pick<TextInputProps, 'id' | 'onChange' | 'value'>;
 type SimpleInputProps = SimpleInputOwnProps &
   SimpleInputTextInputProps &
@@ -28,7 +28,6 @@ const SimpleInputBase: React.FC<SimpleInputProps> = ({
   onBlur,
   placeholder,
   style,
-  validated,
   value,
 }) => {
   return (
@@ -37,11 +36,11 @@ const SimpleInputBase: React.FC<SimpleInputProps> = ({
       style={style}
       fieldId={id}
       label={label !== null && typeof label === 'object' ? intl.formatMessage(label) : label}
-      helperTextInvalid={helpText !== null && typeof helpText === 'object' ? intl.formatMessage(helpText) : helpText}
-      validated={validated}
+      // helperTextInvalid={helpText !== null && typeof helpText === 'object' ? intl.formatMessage(helpText) : helpText}
+      // validated={validated}
     >
       <TextInput
-        validated={validated}
+        // validated={validated} //TODO: 
         value={value}
         onChange={onChange}
         id={id}

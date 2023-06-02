@@ -98,8 +98,8 @@ const SelectorBase: React.FC<SelectorProps> = ({
       style={style}
       fieldId={id}
       label={label !== null && typeof label === 'object' ? intl.formatMessage(label) : label}
-      helperTextInvalid={helpText !== null && typeof helpText === 'object' ? intl.formatMessage(helpText) : helpText}
-      validated={isInvalid ? 'error' : 'default'}
+      // helperTextInvalid={helpText !== null && typeof helpText === 'object' ? intl.formatMessage(helpText) : helpText}
+      // validated={isInvalid ? 'error' : 'default'} TODO:
     >
       <Select
         id={id}
@@ -115,7 +115,7 @@ const SelectorBase: React.FC<SelectorProps> = ({
         onToggle={() => setIsOpen(!isOpen)}
         onSelect={(e, sel: SelectorOption) => {
           setSelection(sel);
-          onChange(sel.value, null);
+          onChange(null, sel.value);
           setIsOpen(false);
         }}
         selections={selection}

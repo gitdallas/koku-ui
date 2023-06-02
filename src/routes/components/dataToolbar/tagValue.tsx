@@ -147,7 +147,7 @@ class TagValueBase extends React.Component<TagValueProps, TagValueState> {
           isDisabled={isDisabled}
           variant={SelectVariant.checkbox}
           aria-label={intl.formatMessage(messages.filterByTagValueAriaLabel)}
-          onToggle={this.onTagValueToggle}
+          onToggle={(_event, isExpanded) => this.onTagValueToggle(isExpanded)}
           onSelect={onTagValueSelect}
           selections={selections}
           isOpen={isTagValueExpanded}
@@ -165,7 +165,7 @@ class TagValueBase extends React.Component<TagValueProps, TagValueState> {
           id="tag-key-value-input"
           type="search"
           aria-label={intl.formatMessage(messages.filterByTagValueAriaLabel)}
-          onChange={this.onTagValueChange}
+          onChange={(_event, value) => this.onTagValueChange(value)}
           value={tagKeyValue}
           placeholder={intl.formatMessage(messages.filterByValuePlaceholder)}
           onKeyDown={evt => onTagValueInput(evt)}

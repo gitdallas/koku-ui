@@ -81,7 +81,7 @@ class CostDistributionBase extends React.Component<CostDistributionProps, CostDi
         isDisabled={isDisabled}
         isOpen={isSelectOpen}
         onSelect={this.handleSelect}
-        onToggle={this.handleToggle}
+        onToggle={(_event, isExpanded) => this.handleToggle(isExpanded)}
         selections={selection}
         variant={SelectVariant.single}
       >

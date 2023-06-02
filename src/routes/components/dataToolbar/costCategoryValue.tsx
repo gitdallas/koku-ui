@@ -148,7 +148,7 @@ class CostCategoryValueBase extends React.Component<CostCategoryValueProps, Cost
           isDisabled={isDisabled}
           variant={SelectVariant.checkbox}
           aria-label={intl.formatMessage(messages.filterByCostCategoryValueAriaLabel)}
-          onToggle={this.onCostCategoryValueToggle}
+          onToggle={(_event, isExpanded) => this.onCostCategoryValueToggle(isExpanded)}
           onSelect={onCostCategoryValueSelect}
           selections={selections}
           isOpen={isCostCategoryValueExpanded}
@@ -166,7 +166,7 @@ class CostCategoryValueBase extends React.Component<CostCategoryValueProps, Cost
           id="tag-key-value-input"
           type="search"
           aria-label={intl.formatMessage(messages.filterByCostCategoryValueAriaLabel)}
-          onChange={this.onCostCategoryValueChange}
+          onChange={(_event, value) => this.onCostCategoryValueChange(value)}
           value={costCategoryKeyValue}
           placeholder={intl.formatMessage(messages.filterByValuePlaceholder)}
           onKeyDown={evt => onCostCategoryValueInput(evt)}

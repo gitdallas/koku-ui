@@ -98,8 +98,8 @@ const SelectorBase: React.FC<SelectorProps> = ({
       style={style}
       fieldId={id}
       label={label !== null && typeof label === 'object' ? intl.formatMessage(label) : label}
-      helperTextInvalid={helpText !== null && typeof helpText === 'object' ? intl.formatMessage(helpText) : helpText}
-      validated={isInvalid ? 'error' : 'default'}
+      // helperTextInvalid={helpText !== null && typeof helpText === 'object' ? intl.formatMessage(helpText) : helpText}
+      // validated={isInvalid ? 'error' : 'default'} TODO: Use FormHelperText, HelperText, and HelperTextItem directly inside children  
     >
       <Select
         id={id}

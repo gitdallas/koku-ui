@@ -32,7 +32,7 @@ const FilterInput: React.FC<FilterInputProps> = ({ id, placeholder = '', value, 
         value={value}
         placeholder={placeholder}
         id={id}
-        onChange={onChange}
+        onChange={(event, value) => onChange(value, event)}
         onKeyPress={(evt: React.KeyboardEvent<HTMLInputElement>) => {
           if (evt.key !== 'Enter' || value === '') {
             return;

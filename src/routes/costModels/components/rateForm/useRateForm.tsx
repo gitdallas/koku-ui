@@ -294,22 +294,22 @@ export function useRateData(metricsHash: MetricHash, rate: Rate = undefined, tie
   return {
     ...state,
     reset: (payload: RateFormData) => dispatch({ type: 'RESET_FORM', payload }),
-    setDescription: (value: string) => dispatch({ type: 'UPDATE_DESCRIPTION', value }),
-    setMetric: (value: string) =>
+    setDescription: (_event, value: string) => dispatch({ type: 'UPDATE_DESCRIPTION', value }),
+    setMetric: (_event, value: string) =>
       dispatch({
         type: 'UPDATE_METRIC',
         value,
         defaultCalculation: getDefaultCalculation(metricsHash, value),
       }),
-    setMeasurement: (value: string) =>
+    setMeasurement: (_event, value: string) =>
       dispatch({
         type: 'UPDATE_MEASUREMENT',
         value,
       }),
     setCalculation: (value: string) => dispatch({ type: 'UPDATE_CALCULATION', value }),
-    setRegular: (value: string) => dispatch({ type: 'UPDATE_REGULAR', value }),
+    setRegular: (_event, value: string) => dispatch({ type: 'UPDATE_REGULAR', value }),
     toggleTaggingRate: () => dispatch({ type: 'TOGGLE_RATE_KIND' }),
-    setTagKey: (value: string) => dispatch({ type: 'UPDATE_TAG_KEY', value }),
+    setTagKey: (_event, value: string) => dispatch({ type: 'UPDATE_TAG_KEY', value }),
     removeTag: (index: number) => dispatch({ type: 'REMOVE_TAG', index }),
     addTag: () => dispatch({ type: 'ADD_TAG' }),
     updateTag: (payload: Partial<(typeof initialRateFormData)['taggingRates']['tagValues'][0]>, index: number) =>

@@ -71,7 +71,7 @@ class UpdateMarkupDialogBase extends React.Component<UpdateMarkupDialogProps, Up
     this.setState({ isDiscount: value === 'true' });
   };
 
-  private handleMarkupDiscountChange = (_, event) => {
+  private handleMarkupDiscountChange = (event, _) => {
     const { value } = event.currentTarget;
 
     this.setState({ markup: value });
@@ -189,9 +189,9 @@ class UpdateMarkupDialogBase extends React.Component<UpdateMarkupDialogProps, Up
                   <Form>
                     <FormGroup
                       fieldId="markup-input-box"
-                      helperTextInvalid={helpText ? intl.formatMessage(helpText) : undefined}
+                      // helperTextInvalid={helpText ? intl.formatMessage(helpText) : undefined}
                       style={styles.rateContainer}
-                      validated={validated}
+                      // validated={validated} TODO:
                     >
                       <InputGroup>
                         <InputGroupText style={styles.sign}>

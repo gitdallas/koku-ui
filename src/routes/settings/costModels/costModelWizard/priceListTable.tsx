@@ -269,7 +269,7 @@ class PriceListTable extends React.Component<PriceListTableProps, PriceListTable
                           onSetPage={priceListPagination.onPageSet}
                           onPerPageSelect={priceListPagination.onPerPageSet}
                           titles={{
-                            paginationTitle: intl.formatMessage(messages.paginationTitle, {
+                            paginationAriaLabel: intl.formatMessage(messages.paginationTitle, {
                               title: intl.formatMessage(messages.costModelsAssignSourcesParen),
                               placement: 'bottom',
                             }),

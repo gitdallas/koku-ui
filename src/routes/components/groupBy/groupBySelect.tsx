@@ -153,7 +153,7 @@ class GroupBySelectBase extends React.Component<GroupBySelectProps, GroupBySelec
           )}
           isDisabled={isDisabled}
           onClear={this.handleGroupByClear}
-          onToggle={this.handleGroupByToggle}
+          onToggle={(_event, isExpanded) => this.handleGroupByToggle(isExpanded)}
           onSelect={this.handleGroupBySelected}
           isOpen={isGroupByOpen}
           placeholderText={intl.formatMessage(messages.chooseKeyPlaceholder)}
