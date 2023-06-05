@@ -1,5 +1,5 @@
 import type { MessageDescriptor } from '@formatjs/intl/src/types';
-import type { FormGroupProps, TextInputProps } from '@patternfly/react-core';
+import { FormGroupProps, HelperText, HelperTextItem, TextInputProps } from '@patternfly/react-core';
 import { FormGroup, TextInput } from '@patternfly/react-core';
 import { intl as defaultIntl } from 'components/i18n';
 import React from 'react';
@@ -12,7 +12,7 @@ interface SimpleInputOwnProps {
 }
 
 type SimpleInputFormGroupProps = Pick<FormGroupProps, 'onBlur' | 'isRequired' | 'placeholder' | 'style'>;
-type SimpleInputTextInputProps = Pick<TextInputProps, 'id' | 'onChange' | 'value'>;
+type SimpleInputTextInputProps = Pick<TextInputProps, 'id' | 'onChange' | 'validated' | 'value'>;
 type SimpleInputProps = SimpleInputOwnProps &
   SimpleInputTextInputProps &
   SimpleInputFormGroupProps &
@@ -28,6 +28,7 @@ const SimpleInputBase: React.FC<SimpleInputProps> = ({
   onBlur,
   placeholder,
   style,
+  validated,
   value,
 }) => {
   return (
@@ -36,11 +37,8 @@ const SimpleInputBase: React.FC<SimpleInputProps> = ({
       style={style}
       fieldId={id}
       label={label !== null && typeof label === 'object' ? intl.formatMessage(label) : label}
-      // helperTextInvalid={helpText !== null && typeof helpText === 'object' ? intl.formatMessage(helpText) : helpText}
-      // validated={validated} TODO:
     >
       <TextInput
-        // validated={validated} TODO:
         value={value}
         onChange={onChange}
         id={id}
@@ -48,6 +46,11 @@ const SimpleInputBase: React.FC<SimpleInputProps> = ({
         isRequired={isRequired}
         placeholder={placeholder}
       />
+      {validated === 'error' && typeof helpText === 'object' && (
+        <HelperText>
+          <HelperTextItem variant="error">{intl.formatMessage(helpText)}</HelperTextItem>
+        </HelperText>
+      )}
     </FormGroup>
   );
 };

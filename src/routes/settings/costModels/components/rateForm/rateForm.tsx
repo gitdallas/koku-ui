@@ -41,8 +41,7 @@ const RateFormBase: React.FC<RateFormProps> = ({ currencyUnits, intl = defaultIn
     setTagKey,
     step,
     taggingRates: {
-      tagKey: { value: tagKey },
-      // tagKey: { value: tagKey, isDirty: isTagKeyDirty }, TODO:?
+      tagKey: { value: tagKey, isDirty: isTagKeyDirty },
       defaultTag,
       tagValues,
     },
@@ -102,7 +101,7 @@ const RateFormBase: React.FC<RateFormProps> = ({ currencyUnits, intl = defaultIn
         id="description"
         label={messages.description}
         value={description}
-        // validated={errors.description ? 'error' : 'default'}
+        validated={errors.description ? 'error' : 'default'}
         helperTextInvalid={errors.description}
         onChange={setDescription}
       />
@@ -213,7 +212,7 @@ const RateFormBase: React.FC<RateFormProps> = ({ currencyUnits, intl = defaultIn
                 id="tag-key"
                 label={messages.costModelsFilterTagKey}
                 placeholder={intl.formatMessage(messages.costModelsEnterTagKey)}
-                // validated={errors.tagKey && isTagKeyDirty ? 'error' : 'default'} TODO:
+                validated={errors.tagKey && isTagKeyDirty ? 'error' : 'default'}
                 helperTextInvalid={errors.tagKey}
               />
               <TaggingRatesForm

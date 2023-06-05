@@ -1,5 +1,7 @@
 import {
 	FormGroup,
+	HelperText,
+	HelperTextItem,
 	Stack,
 	StackItem,
 	TextArea,
@@ -92,8 +94,6 @@ class GeneralInformation extends React.Component<GeneralInformationProps, any> {
             <StackItem>
               <Form style={styles.form}>
                 <FormGroup
-                  // helperTextInvalid={nameErrors(name) && intl.formatMessage(nameErrors(name))} TODO:
-                  // validated={nameErrors(name) === null || !dirtyName ? 'default' : 'error'}
                   label={intl.formatMessage(messages.names, { count: 1 })}
                   isRequired
                   fieldId="name"
@@ -107,12 +107,13 @@ class GeneralInformation extends React.Component<GeneralInformationProps, any> {
                     value={name}
                     onChange={onNameChange}
                   />
+                  {nameErrors(name) && dirtyName && (
+                    <HelperText>
+                      <HelperTextItem variant="error">{intl.formatMessage(nameErrors(name))}</HelperTextItem>
+                    </HelperText>
+                  )}
                 </FormGroup>
                 <FormGroup
-                  // helperTextInvalid={
-                  //   descriptionErrors(description) && intl.formatMessage(descriptionErrors(description))
-                  // }
-                  // validated={descriptionErrors(description) === null ? 'default' : 'error'} TODO:
                   label={intl.formatMessage(messages.description)}
                   fieldId="description"
                 >
@@ -125,6 +126,11 @@ class GeneralInformation extends React.Component<GeneralInformationProps, any> {
                     validated={descriptionErrors(description) === null ? 'default' : 'error'}
                     onChange={(_event, value) => onDescChange}
                   />
+                  {descriptionErrors(description) && (
+                    <HelperText>
+                      <HelperTextItem variant="error">{intl.formatMessage(descriptionErrors(description))}</HelperTextItem>
+                    </HelperText>
+                  )}
                 </FormGroup>
                 <Selector
                   isRequired

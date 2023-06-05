@@ -1,5 +1,8 @@
 import {
 	FormGroup,
+	FormHelperText,
+	HelperText,
+	HelperTextItem,
 	Stack,
 	StackItem,
 	TextArea,
@@ -92,8 +95,6 @@ class GeneralInformation extends React.Component<GeneralInformationProps, any> {
             <StackItem>
               <Form style={styles.form}>
                 <FormGroup
-                  // helperTextInvalid={nameErrors(name) && intl.formatMessage(nameErrors(name))}
-                  // validated={nameErrors(name) === null || !dirtyName ? 'default' : 'error'} TODO:
                   label={intl.formatMessage(messages.names, { count: 1 })}
                   isRequired
                   fieldId="name"
@@ -107,12 +108,17 @@ class GeneralInformation extends React.Component<GeneralInformationProps, any> {
                     value={name}
                     onChange={(_event, value) => onNameChange(value)}
                   />
+                  {nameErrors(name) && dirtyName && (
+                    <FormHelperText>
+                      <HelperText>
+                        <HelperTextItem variant="error">
+                          {intl.formatMessage(nameErrors(name))}
+                        </HelperTextItem>
+                      </HelperText>
+                    </FormHelperText>
+                  )}
                 </FormGroup>
                 <FormGroup
-                  // helperTextInvalid={
-                  //   descriptionErrors(description) && intl.formatMessage(descriptionErrors(description))
-                  // }
-                  // validated={descriptionErrors(description) === null ? 'default' : 'error'} TODO:
                   label={intl.formatMessage(messages.description)}
                   fieldId="description"
                 >
@@ -125,6 +131,15 @@ class GeneralInformation extends React.Component<GeneralInformationProps, any> {
                     validated={descriptionErrors(description) === null ? 'default' : 'error'}
                     onChange={(_event, value) => onDescChange(value)}
                   />
+                  {descriptionErrors(description) && (
+                    <FormHelperText>
+                      <HelperText>
+                        <HelperTextItem variant="error">
+                          {intl.formatMessage(descriptionErrors(description))}
+                        </HelperTextItem>
+                      </HelperText>
+                    </FormHelperText>
+                  )}
                 </FormGroup>
                 <Selector
                   isRequired

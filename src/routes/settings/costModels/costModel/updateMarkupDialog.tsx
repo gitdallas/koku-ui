@@ -18,7 +18,7 @@ import {
   TextContent,
   TextInput,
   Title,
-  TitleSizes, InputGroupItem,
+  TitleSizes, InputGroupItem, HelperText, HelperTextItem,
 } from '@patternfly/react-core';
 import type { CostModel } from 'api/costModels';
 import messages from 'locales/messages';
@@ -189,9 +189,7 @@ class UpdateMarkupDialogBase extends React.Component<UpdateMarkupDialogProps, Up
                   <Form>
                     <FormGroup
                       fieldId="markup-input-box"
-                      // helperTextInvalid={helpText ? intl.formatMessage(helpText) : undefined}
                       style={styles.rateContainer}
-                      // validated={validated} TODO:
                     >
                       <InputGroup>
                         <InputGroupText style={styles.sign}>
@@ -215,6 +213,11 @@ class UpdateMarkupDialogBase extends React.Component<UpdateMarkupDialogProps, Up
                           {intl.formatMessage(messages.percentSymbol)}
                         </InputGroupText>
                       </InputGroup>
+                      {validated === 'error' && (
+                        <HelperText>
+                          <HelperTextItem variant="error">{intl.formatMessage(helpText)}</HelperTextItem>
+                        </HelperText>
+                      )}
                     </FormGroup>
                   </Form>
                 </FlexItem>

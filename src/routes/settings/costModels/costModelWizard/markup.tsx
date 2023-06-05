@@ -14,7 +14,7 @@ import {
   TextInput,
   TextVariants,
   Title,
-  TitleSizes, InputGroupItem,
+  TitleSizes, InputGroupItem, HelperText, HelperTextItem,
 } from '@patternfly/react-core';
 import messages from 'locales/messages';
 import React from 'react';
@@ -116,9 +116,7 @@ class MarkupWithDistributionBase extends React.Component<MarkupWithDistributionP
                       <Form>
                         <FormGroup
                           fieldId="markup-input-box"
-                          // helperTextInvalid={helpText ? intl.formatMessage(helpText) : undefined}
                           style={costCalcStyles.rateContainer}
-                          // validated={validated} TODO:
                         >
                           <InputGroup>
                             <InputGroupText style={costCalcStyles.sign}>
@@ -142,6 +140,11 @@ class MarkupWithDistributionBase extends React.Component<MarkupWithDistributionP
                               {intl.formatMessage(messages.percentSymbol)}
                             </InputGroupText>
                           </InputGroup>
+                          {validated === 'error' && (
+                            <HelperText>
+                              <HelperTextItem variant="error">{intl.formatMessage(helpText)}</HelperTextItem>
+                            </HelperText>
+                          )}
                         </FormGroup>
                       </Form>
                     </FlexItem>

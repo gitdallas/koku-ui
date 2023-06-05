@@ -54,7 +54,7 @@ const TaggingRatesFormBase: React.FC<TaggingRatesFormProps> = ({
                 placeholder={intl.formatMessage(messages.costModelsEnterTagValue)}
                 value={tag.tagValue}
                 onChange={(_event, value) => updateTag({ tagValue: value }, ix)}
-                // validated={tagValues[ix].isTagValueDirty && errors.tagValueValues[ix] ? 'error' : 'default'} TODO:
+                validated={tagValues[ix].isTagValueDirty && errors.tagValueValues[ix] ? 'error' : 'default'}
                 helperTextInvalid={errors.tagValueValues[ix]}
               />
             </SplitItem>
@@ -74,7 +74,7 @@ const TaggingRatesFormBase: React.FC<TaggingRatesFormProps> = ({
                 style={style}
                 id={`desc_${ix}`}
                 label={messages.description}
-                // validated={errors.tagDescription[ix] ? 'error' : 'default'} TODO:
+                validated={errors.tagDescription[ix] ? 'error' : 'default'}
                 placeholder={intl.formatMessage(messages.costModelsEnterTagDesc)}
                 value={tag.description}
                 onChange={(_event, value) => updateTag({ description: value }, ix)}

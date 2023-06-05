@@ -1,5 +1,5 @@
 import type { MessageDescriptor } from '@formatjs/intl/src/types';
-import type { FormGroupProps, TextInputProps } from '@patternfly/react-core';
+import { FormGroupProps, FormHelperText, HelperText, HelperTextItem, TextInputProps } from '@patternfly/react-core';
 import { FormGroup, InputGroup, InputGroupText, TextInput, InputGroupItem } from '@patternfly/react-core';
 import { intl as defaultIntl } from 'components/i18n';
 import messages from 'locales/messages';
@@ -44,8 +44,6 @@ const RateInputBase: React.FC<RateInputBaseProps> = ({
       style={style}
       fieldId={fieldId}
       label={label !== null && typeof label === 'object' ? intl.formatMessage(label) : label}
-      // helperTextInvalid={helpText !== null && typeof helpText === 'object' ? intl.formatMessage(helpText) : helpText}
-      // validated={validated} TODO: Use FormHelperText, HelperText, and HelperTextItem directly inside children  
     >
       <InputGroup>
         <InputGroupText style={styles.currency}>
@@ -64,6 +62,15 @@ const RateInputBase: React.FC<RateInputBaseProps> = ({
           validated={validated}
         /></InputGroupItem>
       </InputGroup>
+      {validated === "error" && helpText && (
+        <FormHelperText>
+          <HelperText>
+            <HelperTextItem variant="error">
+              {typeof helpText === 'object' ? intl.formatMessage(helpText) : helpText}
+            </HelperTextItem>
+          </HelperText>
+        </FormHelperText>
+      )}
     </FormGroup>
   );
 };

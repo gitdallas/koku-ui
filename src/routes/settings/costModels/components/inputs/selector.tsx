@@ -1,7 +1,9 @@
 import type { MessageDescriptor } from '@formatjs/intl/src/types';
 import {
 	FormGroupProps,
-	FormSelectProps
+	FormSelectProps,
+  HelperText,
+  HelperTextItem
 } from '@patternfly/react-core';
 import {
 	SelectOptionObject
@@ -98,8 +100,6 @@ const SelectorBase: React.FC<SelectorProps> = ({
       style={style}
       fieldId={id}
       label={label !== null && typeof label === 'object' ? intl.formatMessage(label) : label}
-      // helperTextInvalid={helpText !== null && typeof helpText === 'object' ? intl.formatMessage(helpText) : helpText}
-      // validated={isInvalid ? 'error' : 'default'} TODO:
     >
       <Select
         id={id}
@@ -119,11 +119,17 @@ const SelectorBase: React.FC<SelectorProps> = ({
           setIsOpen(false);
         }}
         selections={selection}
+        validated={isInvalid ? 'error' : 'default'}
       >
         {getSelectorOptions().map(opt => (
           <SelectOption key={`${opt.value}`} value={opt} description={opt.description} />
         ))}
       </Select>
+      {isInvalid && typeof helpText === 'object' && (
+        <HelperText>
+          <HelperTextItem variant="error">{intl.formatMessage(helpText)}</HelperTextItem>
+        </HelperText>
+      )}
     </FormGroup>
   );
 };
