@@ -115,7 +115,7 @@ export class ExportModalBase extends React.Component<ExportModalProps, ExportMod
     this.setState({ timeScope: event.currentTarget.value });
   };
 
-  private handleNameChange = (event, value) => {
+  private handleNameChange = event => {
     this.setState({ name: event.currentTarget.value });
   };
 

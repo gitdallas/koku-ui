@@ -75,7 +75,7 @@ class UpdateMarkupDialogBase extends React.Component<UpdateMarkupDialogProps, Up
     this.setState({ isDiscount: value === 'true' });
   };
 
-  private handleMarkupDiscountChange = (event, _) => {
+  private handleMarkupDiscountChange = event => {
     const { value } = event.currentTarget;
 
     this.setState({ markup: value });

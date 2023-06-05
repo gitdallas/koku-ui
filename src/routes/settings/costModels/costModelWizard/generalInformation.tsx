@@ -115,7 +115,7 @@ class GeneralInformation extends React.Component<GeneralInformationProps, any> {
                     name="description"
                     value={description}
                     validated={descriptionErrors(description) === null ? 'default' : 'error'}
-                    onChange={(_event, value) => onDescChange}
+                    onChange={(_event, value) => onDescChange(value)}
                   />
                   {descriptionErrors(description) && (
                     <HelperText>

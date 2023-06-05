@@ -97,7 +97,7 @@ export class ColumnManagementModalBase extends React.Component<ColumnManagementM
     return hiddenColumns.has(value);
   };
 
-  private handleChange = (event, _) => {
+  private handleChange = event => {
     const hiddenColumns = this.getHidden(event.target.id);
     this.setState({ hiddenColumns });
   };
