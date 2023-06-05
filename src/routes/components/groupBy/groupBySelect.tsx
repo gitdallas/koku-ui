@@ -1,8 +1,4 @@
-import {
-	Select,
-	SelectOption,
-	SelectVariant
-} from '@patternfly/react-core/deprecated';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 import type { Query } from 'api/queries/query';
 import { parseQuery } from 'api/queries/query';
 import type { Resource } from 'api/resources/resource';

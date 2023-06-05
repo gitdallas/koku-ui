@@ -1,17 +1,15 @@
 import {
-	FormGroup,
-	HelperText,
-	HelperTextItem,
-	Stack,
-	StackItem,
-	TextArea,
-	TextInput,
-	Title,
-	TitleSizes
+  FormGroup,
+  HelperText,
+  HelperTextItem,
+  Stack,
+  StackItem,
+  TextArea,
+  TextInput,
+  Title,
+  TitleSizes,
 } from '@patternfly/react-core';
-import {
-	SelectDirection
-} from '@patternfly/react-core/deprecated';
+import { SelectDirection } from '@patternfly/react-core/deprecated';
 import messages from 'locales/messages';
 import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';
@@ -93,11 +91,7 @@ class GeneralInformation extends React.Component<GeneralInformationProps, any> {
             </StackItem>
             <StackItem>
               <Form style={styles.form}>
-                <FormGroup
-                  label={intl.formatMessage(messages.names, { count: 1 })}
-                  isRequired
-                  fieldId="name"
-                >
+                <FormGroup label={intl.formatMessage(messages.names, { count: 1 })} isRequired fieldId="name">
                   <TextInput
                     validated={nameErrors(name) === null || !dirtyName ? 'default' : 'error'}
                     isRequired
@@ -113,10 +107,7 @@ class GeneralInformation extends React.Component<GeneralInformationProps, any> {
                     </HelperText>
                   )}
                 </FormGroup>
-                <FormGroup
-                  label={intl.formatMessage(messages.description)}
-                  fieldId="description"
-                >
+                <FormGroup label={intl.formatMessage(messages.description)} fieldId="description">
                   <TextArea
                     style={styles.textArea}
                     type="text"
@@ -128,7 +119,9 @@ class GeneralInformation extends React.Component<GeneralInformationProps, any> {
                   />
                   {descriptionErrors(description) && (
                     <HelperText>
-                      <HelperTextItem variant="error">{intl.formatMessage(descriptionErrors(description))}</HelperTextItem>
+                      <HelperTextItem variant="error">
+                        {intl.formatMessage(descriptionErrors(description))}
+                      </HelperTextItem>
                     </HelperText>
                   )}
                 </FormGroup>

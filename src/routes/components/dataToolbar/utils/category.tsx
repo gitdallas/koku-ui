@@ -1,22 +1,7 @@
-import {
-	ToolbarChipGroup
-} from '@patternfly/react-core';
-import {
-	SelectOptionObject
-} from '@patternfly/react-core/deprecated';
-import {
-	Button,
-	ButtonVariant,
-	InputGroup,
-	TextInput,
-	ToolbarFilter,
-	ToolbarItem
-} from '@patternfly/react-core';
-import {
-	Select,
-	SelectOption,
-	SelectVariant
-} from '@patternfly/react-core/deprecated';
+import type { ToolbarChipGroup } from '@patternfly/react-core';
+import { Button, ButtonVariant, InputGroup, TextInput, ToolbarFilter, ToolbarItem } from '@patternfly/react-core';
+import type { SelectOptionObject } from '@patternfly/react-core/deprecated';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 import { FilterIcon } from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { SearchIcon } from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import type { ResourceType } from 'api/resources/resource';

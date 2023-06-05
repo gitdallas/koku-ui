@@ -1,14 +1,6 @@
-import {
-	SelectOptionObject
-} from '@patternfly/react-core/deprecated';
-import {
-	Title
-} from '@patternfly/react-core';
-import {
-	Select,
-	SelectOption,
-	SelectVariant
-} from '@patternfly/react-core/deprecated';
+import { Title } from '@patternfly/react-core';
+import type { SelectOptionObject } from '@patternfly/react-core/deprecated';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 import type { Org, OrgPathsType } from 'api/orgs/org';
 import { OrgType } from 'api/orgs/org';
 import type { Query } from 'api/queries/query';

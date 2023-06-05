@@ -1,5 +1,6 @@
 import './commonDrawer.scss';
 import '@patternfly/patternfly/patternfly.css';
+
 import { Drawer, DrawerContent, DrawerContentBody } from '@patternfly/react-core';
 import { ExportsDrawer } from 'components/drawers';
 import { OptimizationsDrawer } from 'components/drawers';
@@ -57,7 +58,9 @@ class CommonDrawerBase extends React.Component<CommonDrawerProps> {
     return (
       <Drawer className="drawerOverride" isExpanded={isExpanded} onExpand={this.handleExpand}>
         <DrawerContent panelContent={this.getPanelContent()}>
-          <DrawerContentBody className="pf-v5-u-display-flex pf-v5-u-flex-direction-column">{children}</DrawerContentBody>
+          <DrawerContentBody className="pf-v5-u-display-flex pf-v5-u-flex-direction-column">
+            {children}
+          </DrawerContentBody>
         </DrawerContent>
       </Drawer>
     );

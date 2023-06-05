@@ -1,12 +1,7 @@
-import {
-	Title,
-	TitleSizes
-} from '@patternfly/react-core';
-import {
-	Wizard,
-  WizardStepFunctionType
-} from '@patternfly/react-core/deprecated';
+import { Title, TitleSizes } from '@patternfly/react-core';
 import { Button, Modal } from '@patternfly/react-core';
+import type { WizardStepFunctionType } from '@patternfly/react-core/deprecated';
+import { Wizard } from '@patternfly/react-core/deprecated';
 import { ExclamationTriangleIcon } from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import { addCostModel } from 'api/costModels';
 import type { MetricHash } from 'api/metrics';

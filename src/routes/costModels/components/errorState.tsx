@@ -3,12 +3,14 @@ import {
   Button,
   EmptyState,
   EmptyStateBody,
+  EmptyStateFooter,
+  EmptyStateHeader,
   EmptyStateIcon,
   EmptyStateVariant,
   Stack,
   StackItem,
   Title,
-  TitleSizes, EmptyStateHeader, EmptyStateFooter,
+  TitleSizes,
 } from '@patternfly/react-core';
 import { ExclamationCircleIcon } from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import global_DangerColor_100 from '@patternfly/react-tokens/dist/js/global_danger_color_100';
@@ -31,14 +33,18 @@ type ErrorStateProps = ErrorEmptyProps & OwnProps;
 export const ErrorState: React.FC<ErrorStateProps> = ({ variant, actionButton, title, description }) => {
   return (
     <EmptyState variant={variant}>
-      <EmptyStateHeader titleText={<>{title}</>} icon={<EmptyStateIcon icon={ExclamationCircleIcon} color={global_DangerColor_100.value} />} headingLevel="h4" />
+      <EmptyStateHeader
+        titleText={<>{title}</>}
+        icon={<EmptyStateIcon icon={ExclamationCircleIcon} color={global_DangerColor_100.value} />}
+        headingLevel="h4"
+      />
       <EmptyStateBody>
         <Stack>
           <StackItem>{description}</StackItem>
         </Stack>
-      </EmptyStateBody><EmptyStateFooter>
-      {actionButton}
-    </EmptyStateFooter></EmptyState>
+      </EmptyStateBody>
+      <EmptyStateFooter>{actionButton}</EmptyStateFooter>
+    </EmptyState>
   );
 };
 

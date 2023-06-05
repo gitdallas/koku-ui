@@ -1,7 +1,4 @@
-import {
-	Select,
-	SelectOption
-} from '@patternfly/react-core/deprecated';
+import { Select, SelectOption } from '@patternfly/react-core/deprecated';
 import { FilterIcon } from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import React from 'react';
 import { WithStateMachine } from 'routes/settings/costModels/components/hoc/withStateMachine';

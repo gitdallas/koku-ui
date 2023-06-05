@@ -1,5 +1,14 @@
 import type { IAction, IRow } from '@patternfly/react-table';
-import { ActionsColumn, Table /* data-codemods */, TableVariant, Tbody, Td, Th, Thead, Tr } from '@patternfly/react-table';
+import {
+  ActionsColumn,
+  Table /* data-codemods */,
+  TableVariant,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  Tr,
+} from '@patternfly/react-table';
 import { TableGridBreakpoint } from '@patternfly/react-table';
 import messages from 'locales/messages';
 import React from 'react';

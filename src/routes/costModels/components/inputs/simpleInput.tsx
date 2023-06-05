@@ -1,5 +1,6 @@
 import type { MessageDescriptor } from '@formatjs/intl/src/types';
-import { FormGroupProps, FormHelperText, HelperText, HelperTextItem, TextInputProps } from '@patternfly/react-core';
+import type { FormGroupProps, TextInputProps } from '@patternfly/react-core';
+import { FormHelperText, HelperText, HelperTextItem } from '@patternfly/react-core';
 import { FormGroup, TextInput } from '@patternfly/react-core';
 import { intl as defaultIntl } from 'components/i18n';
 import React from 'react';
@@ -39,7 +40,7 @@ const SimpleInputBase: React.FC<SimpleInputProps> = ({
       label={label !== null && typeof label === 'object' ? intl.formatMessage(label) : label}
     >
       <TextInput
-        validated={validated} //TODO: 
+        validated={validated} // TODO:
         value={value}
         onChange={onChange}
         id={id}
@@ -47,7 +48,7 @@ const SimpleInputBase: React.FC<SimpleInputProps> = ({
         isRequired={isRequired}
         placeholder={placeholder}
       />
-      {validated === "error" && helpText && (
+      {validated === 'error' && helpText && (
         <FormHelperText>
           <HelperText>
             <HelperTextItem variant="error">

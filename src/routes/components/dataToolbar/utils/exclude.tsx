@@ -1,14 +1,6 @@
-import {
-	SelectOptionObject
-} from '@patternfly/react-core/deprecated';
-import {
-	ToolbarItem
-} from '@patternfly/react-core';
-import {
-	Select,
-	SelectOption,
-	SelectVariant
-} from '@patternfly/react-core/deprecated';
+import { ToolbarItem } from '@patternfly/react-core';
+import type { SelectOptionObject } from '@patternfly/react-core/deprecated';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 import { intl } from 'components/i18n';
 import messages from 'locales/messages';
 import React from 'react';

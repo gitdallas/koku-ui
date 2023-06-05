@@ -1,12 +1,12 @@
 import {
   EmptyState,
   EmptyStateBody,
+  EmptyStateHeader,
   EmptyStateIcon,
   Grid,
   GridItem,
   PageSection,
   TabContent,
-  EmptyStateHeader,
 } from '@patternfly/react-core';
 import { ErrorCircleOIcon } from '@patternfly/react-icons/dist/esm/icons/error-circle-o-icon';
 import { PageHeader, PageHeaderTitle } from '@redhat-cloud-services/frontend-components/PageHeader';
@@ -92,7 +92,11 @@ class CostModelInfo extends React.Component<CostModelInfoProps, CostModelInfoSta
               </PageHeader>
               <PageSection>
                 <EmptyState>
-                  <EmptyStateHeader titleText={<>{intl.formatMessage(messages.costModelsUUIDEmptyState)}</>} icon={<EmptyStateIcon icon={ErrorCircleOIcon} />} headingLevel="h2" />
+                  <EmptyStateHeader
+                    titleText={<>{intl.formatMessage(messages.costModelsUUIDEmptyState)}</>}
+                    icon={<EmptyStateIcon icon={ErrorCircleOIcon} />}
+                    headingLevel="h2"
+                  />
                   <EmptyStateBody>
                     {intl.formatMessage(messages.costModelsUUIDEmptyStateDesc, {
                       uuid: this.props.router.params.uuid,

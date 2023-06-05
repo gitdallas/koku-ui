@@ -2,7 +2,11 @@ import {
   Flex,
   FlexItem,
   FormGroup,
+  FormHelperText,
+  HelperText,
+  HelperTextItem,
   InputGroup,
+  InputGroupItem,
   InputGroupText,
   List,
   ListItem,
@@ -14,7 +18,7 @@ import {
   TextInput,
   TextVariants,
   Title,
-  TitleSizes, InputGroupItem, FormHelperText, HelperText, HelperTextItem,
+  TitleSizes,
 } from '@patternfly/react-core';
 import messages from 'locales/messages';
 import React from 'react';
@@ -114,38 +118,35 @@ class MarkupWithDistributionBase extends React.Component<MarkupWithDistributionP
                   <Flex direction={{ default: 'column' }} alignSelf={{ default: 'alignSelfCenter' }}>
                     <FlexItem>
                       <Form>
-                        <FormGroup
-                          fieldId="markup-input-box"
-                          style={costCalcStyles.rateContainer}
-                        >
+                        <FormGroup fieldId="markup-input-box" style={costCalcStyles.rateContainer}>
                           <InputGroup>
                             <InputGroupText style={costCalcStyles.sign}>
                               {isDiscount
                                 ? intl.formatMessage(messages.discountMinus)
                                 : intl.formatMessage(messages.markupPlus)}
                             </InputGroupText>
-                            <InputGroupItem isFill ><TextInput
-                              aria-label={intl.formatMessage(messages.rate)}
-                              id="markup-input-box"
-                              isRequired
-                              onKeyDown={handleOnKeyDown}
-                              onChange={(_event, value) => handleMarkupDiscountChange(value)}
-                              placeholder={'0'}
-                              style={costCalcStyles.inputField}
-                              type="text"
-                              validated={validated}
-                              value={markup}
-                            /></InputGroupItem>
+                            <InputGroupItem isFill>
+                              <TextInput
+                                aria-label={intl.formatMessage(messages.rate)}
+                                id="markup-input-box"
+                                isRequired
+                                onKeyDown={handleOnKeyDown}
+                                onChange={(_event, value) => handleMarkupDiscountChange(value)}
+                                placeholder={'0'}
+                                style={costCalcStyles.inputField}
+                                type="text"
+                                validated={validated}
+                                value={markup}
+                              />
+                            </InputGroupItem>
                             <InputGroupText style={costCalcStyles.percent}>
                               {intl.formatMessage(messages.percentSymbol)}
                             </InputGroupText>
                           </InputGroup>
-                          {validated === "error" && helpText && (
+                          {validated === 'error' && helpText && (
                             <FormHelperText>
                               <HelperText>
-                                <HelperTextItem variant="error">
-                                  {intl.formatMessage(helpText)}
-                                </HelperTextItem>
+                                <HelperTextItem variant="error">{intl.formatMessage(helpText)}</HelperTextItem>
                               </HelperText>
                             </FormHelperText>
                           )}

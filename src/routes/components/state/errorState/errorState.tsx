@@ -1,9 +1,9 @@
 import {
   EmptyState,
   EmptyStateBody,
+  EmptyStateHeader,
   EmptyStateIcon,
   EmptyStateVariant,
-  EmptyStateHeader,
 } from '@patternfly/react-core';
 import { ErrorCircleOIcon } from '@patternfly/react-icons/dist/esm/icons/error-circle-o-icon';
 import { LockIcon } from '@patternfly/react-icons/dist/esm/icons/lock-icon';

@@ -111,11 +111,7 @@ class OptimizationsLinkBase extends React.Component<OptimizationsLinkProps, any>
       </Button>
     );
     if (isDisabled) {
-      return (
-        <Tooltip content={intl.formatMessage(messages.optimizationsViewAllDisabled)} >
-          {buttonComponent}
-        </Tooltip>
-      );
+      return <Tooltip content={intl.formatMessage(messages.optimizationsViewAllDisabled)}>{buttonComponent}</Tooltip>;
     }
     return buttonComponent;
   }

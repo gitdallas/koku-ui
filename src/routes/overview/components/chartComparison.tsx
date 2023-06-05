@@ -1,11 +1,5 @@
-import {
-	SelectOptionObject
-} from '@patternfly/react-core/deprecated';
-import {
-	Select,
-	SelectOption,
-	SelectVariant
-} from '@patternfly/react-core/deprecated';
+import type { SelectOptionObject } from '@patternfly/react-core/deprecated';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 import React from 'react';
 
 interface ChartComparisonOwnProps {

@@ -1,12 +1,6 @@
 import type { MessageDescriptor } from '@formatjs/intl/src/types';
-import {
-	SelectOptionObject
-} from '@patternfly/react-core/deprecated';
-import {
-	Select,
-	SelectOption,
-	SelectVariant
-} from '@patternfly/react-core/deprecated';
+import type { SelectOptionObject } from '@patternfly/react-core/deprecated';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';
 import { injectIntl } from 'react-intl';

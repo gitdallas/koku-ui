@@ -1,6 +1,7 @@
 import type { MessageDescriptor } from '@formatjs/intl/src/types';
-import { FormGroupProps, FormHelperText, HelperText, HelperTextItem, TextInputProps } from '@patternfly/react-core';
-import { FormGroup, InputGroup, InputGroupText, TextInput, InputGroupItem } from '@patternfly/react-core';
+import type { FormGroupProps, TextInputProps } from '@patternfly/react-core';
+import { FormHelperText, HelperText, HelperTextItem } from '@patternfly/react-core';
+import { FormGroup, InputGroup, InputGroupItem, InputGroupText, TextInput } from '@patternfly/react-core';
 import { intl as defaultIntl } from 'components/i18n';
 import messages from 'locales/messages';
 import React from 'react';
@@ -49,20 +50,22 @@ const RateInputBase: React.FC<RateInputBaseProps> = ({
         <InputGroupText style={styles.currency}>
           {intl.formatMessage(messages.currencyUnits, { units: currencyUnits })}
         </InputGroupText>
-        <InputGroupItem isFill ><TextInput
-          onBlur={onBlur}
-          isRequired
-          type="text"
-          aria-label={intl.formatMessage(messages.costModelsWizardRateAriaLabel)}
-          id={fieldId}
-          placeholder={formatCurrencyRaw(0, currencyUnits, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-          value={value}
-          onChange={onChange}
-          onKeyDown={handleOnKeyDown}
-          validated={validated}
-        /></InputGroupItem>
+        <InputGroupItem isFill>
+          <TextInput
+            onBlur={onBlur}
+            isRequired
+            type="text"
+            aria-label={intl.formatMessage(messages.costModelsWizardRateAriaLabel)}
+            id={fieldId}
+            placeholder={formatCurrencyRaw(0, currencyUnits, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+            value={value}
+            onChange={onChange}
+            onKeyDown={handleOnKeyDown}
+            validated={validated}
+          />
+        </InputGroupItem>
       </InputGroup>
-      {validated === "error" && helpText && (
+      {validated === 'error' && helpText && (
         <FormHelperText>
           <HelperText>
             <HelperTextItem variant="error">

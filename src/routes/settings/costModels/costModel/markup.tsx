@@ -1,10 +1,5 @@
 import { Card, CardBody, CardHeader, Title, TitleSizes } from '@patternfly/react-core';
-import {
-	Dropdown,
-	DropdownItem,
-	DropdownPosition,
-	KebabToggle
-} from '@patternfly/react-core/deprecated';
+import { Dropdown, DropdownItem, DropdownPosition, KebabToggle } from '@patternfly/react-core/deprecated';
 import type { CostModel } from 'api/costModels';
 import messages from 'locales/messages';
 import React from 'react';
@@ -43,30 +38,37 @@ const MarkupCardBase: React.FC<Props> = ({
     <>
       {isUpdateDialogOpen && <UpdateMarkupDialog current={current} />}
       <Card style={styles.card}>
-        <CardHeader actions={{ actions: <><Dropdown
-              toggle={<KebabToggle onToggle={(_event, isOpen) => setDropdownIsOpen(isOpen)} />}
-              isOpen={dropdownIsOpen}
-              onSelect={() => setDropdownIsOpen(false)}
-              position={DropdownPosition.right}
-              isPlain
-              dropdownItems={[
-                <ReadOnlyTooltip key="edit" isDisabled={!isWritePermission}>
-                  <DropdownItem
-                    isDisabled={!isWritePermission}
-                    onClick={() => setCostModelDialog({ isOpen: true, name: 'updateMarkup' })}
-                    component="button"
-                  >
-                    {intl.formatMessage(messages.editMarkup)}
-                  </DropdownItem>
-                </ReadOnlyTooltip>,
-              ]}
-            /></>, hasNoOffset: false, className: undefined}} >
-          
-            <Title headingLevel="h2" size={TitleSizes.md}>
-              {intl.formatMessage(messages.markupOrDiscount)}
-            </Title>
-          
-          
+        <CardHeader
+          actions={{
+            actions: (
+              <>
+                <Dropdown
+                  toggle={<KebabToggle onToggle={(_event, isOpen) => setDropdownIsOpen(isOpen)} />}
+                  isOpen={dropdownIsOpen}
+                  onSelect={() => setDropdownIsOpen(false)}
+                  position={DropdownPosition.right}
+                  isPlain
+                  dropdownItems={[
+                    <ReadOnlyTooltip key="edit" isDisabled={!isWritePermission}>
+                      <DropdownItem
+                        isDisabled={!isWritePermission}
+                        onClick={() => setCostModelDialog({ isOpen: true, name: 'updateMarkup' })}
+                        component="button"
+                      >
+                        {intl.formatMessage(messages.editMarkup)}
+                      </DropdownItem>
+                    </ReadOnlyTooltip>,
+                  ]}
+                />
+              </>
+            ),
+            hasNoOffset: false,
+            className: undefined,
+          }}
+        >
+          <Title headingLevel="h2" size={TitleSizes.md}>
+            {intl.formatMessage(messages.markupOrDiscount)}
+          </Title>
         </CardHeader>
         <CardBody style={styles.cardDescription}>{intl.formatMessage(messages.markupOrDiscountDesc)}</CardBody>
         <CardBody isFilled />

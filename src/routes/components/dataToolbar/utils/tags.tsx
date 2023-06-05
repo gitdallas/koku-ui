@@ -1,13 +1,6 @@
 import type { ToolbarChipGroup } from '@patternfly/react-core';
-import {
-	ToolbarFilter,
-	ToolbarItem
-} from '@patternfly/react-core';
-import {
-	Select,
-	SelectOption,
-	SelectVariant
-} from '@patternfly/react-core/deprecated';
+import { ToolbarFilter, ToolbarItem } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 import type { Tag } from 'api/tags/tag';
 import type { TagPathsType } from 'api/tags/tag';
 import { intl } from 'components/i18n';

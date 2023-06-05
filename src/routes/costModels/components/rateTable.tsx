@@ -122,10 +122,7 @@ const RateTableBase: React.FC<RateTableProps> = ({
         });
 
   return (
-    <Table
-      aria-label={intl.formatMessage(messages.costModelsWizardCreatePriceList)}
-      variant={TableVariant.compact}
-    >
+    <Table aria-label={intl.formatMessage(messages.costModelsWizardCreatePriceList)} variant={TableVariant.compact}>
       <Thead>
         <Tr>
           {columns.map((col: { title?: string; sortable?: boolean }, i) => (

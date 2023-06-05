@@ -230,11 +230,7 @@ export class ExportModalBase extends React.Component<ExportModalProps, ExportMod
           <Grid hasGutter md={6}>
             {isExportsFeatureEnabled && (
               <GridItem span={12}>
-                <FormGroup
-                  fieldId="exportName"
-                  label={intl.formatMessage(messages.names, { count: 1 })}
-                  isRequired
-                >
+                <FormGroup fieldId="exportName" label={intl.formatMessage(messages.names, { count: 1 })} isRequired>
                   <TextInput
                     isRequired
                     type="text"
@@ -243,12 +239,10 @@ export class ExportModalBase extends React.Component<ExportModalProps, ExportMod
                     value={defaultName}
                     onChange={this.handleNameChange}
                   />
-                  {validated === "error" && helpText && (
+                  {validated === 'error' && helpText && (
                     <FormHelperText>
                       <HelperText>
-                        <HelperTextItem variant="error">
-                          {intl.formatMessage(helpText)}
-                        </HelperTextItem>
+                        <HelperTextItem variant="error">{intl.formatMessage(helpText)}</HelperTextItem>
                       </HelperText>
                     </FormHelperText>
                   )}

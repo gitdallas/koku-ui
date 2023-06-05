@@ -3,6 +3,7 @@ import {
   Button,
   EmptyState,
   EmptyStateBody,
+  EmptyStateHeader,
   EmptyStateIcon,
   List,
   ListItem,
@@ -10,7 +11,7 @@ import {
   Toolbar,
   ToolbarContent,
   ToolbarItem,
-  ToolbarItemVariant, EmptyStateHeader,
+  ToolbarItemVariant,
 } from '@patternfly/react-core';
 import { PlusCircleIcon } from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import { SortByDirection } from '@patternfly/react-table';
@@ -291,7 +292,11 @@ class PriceListTable extends React.Component<PriceListTableProps, PriceListTable
                   search.metrics.length === 0 && (
                     <Bullseye>
                       <EmptyState>
-                        <EmptyStateHeader titleText={<>{intl.formatMessage(messages.priceListEmptyRate)}</>} icon={<EmptyStateIcon icon={PlusCircleIcon} />} headingLevel="h2" />
+                        <EmptyStateHeader
+                          titleText={<>{intl.formatMessage(messages.priceListEmptyRate)}</>}
+                          icon={<EmptyStateIcon icon={PlusCircleIcon} />}
+                          headingLevel="h2"
+                        />
                         <EmptyStateBody>{intl.formatMessage(messages.priceListEmptyRateDesc)}</EmptyStateBody>
                       </EmptyState>
                     </Bullseye>

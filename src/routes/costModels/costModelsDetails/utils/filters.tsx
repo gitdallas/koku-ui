@@ -1,16 +1,6 @@
 import type { ToolbarProps } from '@patternfly/react-core';
-import {
-	InputGroup,
-	InputGroupText,
-	TextInput,
-	Toolbar,
-	ToolbarFilter, InputGroupItem
-} from '@patternfly/react-core';
-import {
-	Dropdown,
-	DropdownItem,
-	DropdownToggle
-} from '@patternfly/react-core/deprecated';
+import { InputGroup, InputGroupItem, InputGroupText, TextInput, Toolbar, ToolbarFilter } from '@patternfly/react-core';
+import { Dropdown, DropdownItem, DropdownToggle } from '@patternfly/react-core/deprecated';
 import { SearchIcon } from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import { intl as defaultIntl } from 'components/i18n';
 import messages from 'locales/messages';
@@ -37,18 +27,20 @@ interface FilterInputProps {
 const FilterInput: React.FC<FilterInputProps> = ({ placeholder = '', value, onChange, onKeyPress }) => {
   return (
     <InputGroup>
-      <InputGroupItem isFill ><TextInput
-        aria-label={placeholder}
-        value={value}
-        placeholder={placeholder}
-        onChange={(event, value) => onChange(value, event)}
-        onKeyPress={(evt: React.KeyboardEvent<HTMLInputElement>) => {
-          if (evt.key !== 'Enter' || value === '') {
-            return;
-          }
-          onKeyPress(evt);
-        }}
-      /></InputGroupItem>
+      <InputGroupItem isFill>
+        <TextInput
+          aria-label={placeholder}
+          value={value}
+          placeholder={placeholder}
+          onChange={(event, value) => onChange(value, event)}
+          onKeyPress={(evt: React.KeyboardEvent<HTMLInputElement>) => {
+            if (evt.key !== 'Enter' || value === '') {
+              return;
+            }
+            onKeyPress(evt);
+          }}
+        />
+      </InputGroupItem>
       <InputGroupText style={{ borderLeft: '0' }}>
         <SearchIcon />
       </InputGroupText>

@@ -3,6 +3,7 @@ import {
   Button,
   EmptyState,
   EmptyStateBody,
+  EmptyStateHeader,
   EmptyStateIcon,
   Pagination,
   Stack,
@@ -10,7 +11,7 @@ import {
   Text,
   TextContent,
   Title,
-  TitleSizes, EmptyStateHeader,
+  TitleSizes,
 } from '@patternfly/react-core';
 import { PlusCircleIcon } from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import { SortByDirection } from '@patternfly/react-table';
@@ -93,7 +94,11 @@ class PriceListTable extends React.Component<PriceListTableProps, PriceListTable
     const NoTiersEmptyState = () => (
       <Bullseye>
         <EmptyState>
-          <EmptyStateHeader titleText={<>{intl.formatMessage(messages.costModelsWizardEmptyStateTitle)}</>} icon={<EmptyStateIcon icon={PlusCircleIcon} />} headingLevel="h2" />
+          <EmptyStateHeader
+            titleText={<>{intl.formatMessage(messages.costModelsWizardEmptyStateTitle)}</>}
+            icon={<EmptyStateIcon icon={PlusCircleIcon} />}
+            headingLevel="h2"
+          />
           <EmptyStateBody>
             {intl.formatMessage(messages.costModelsWizardEmptyStateSkipStep, {
               value: <strong>{intl.formatMessage(messages.next)}</strong>,

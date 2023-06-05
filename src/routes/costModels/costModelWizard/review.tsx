@@ -2,7 +2,10 @@ import {
   Alert,
   Button,
   EmptyState,
+  EmptyStateActions,
   EmptyStateBody,
+  EmptyStateFooter,
+  EmptyStateHeader,
   EmptyStateIcon,
   Stack,
   StackItem,
@@ -13,7 +16,7 @@ import {
   TextListItemVariants,
   TextListVariants,
   Title,
-  TitleSizes, EmptyStateActions, EmptyStateHeader, EmptyStateFooter,
+  TitleSizes,
 } from '@patternfly/react-core';
 import { OkIcon } from '@patternfly/react-icons/dist/esm/icons/ok-icon';
 import messages from 'locales/messages';
@@ -31,16 +34,22 @@ const ReviewSuccessBase: React.FC<WrappedComponentProps> = ({ intl }) => (
   <CostModelContext.Consumer>
     {({ onClose, name }) => (
       <EmptyState>
-        <EmptyStateHeader titleText={<>{intl.formatMessage(messages.costModelsWizardReviewStatusTitle)}</>} icon={<EmptyStateIcon icon={OkIcon} color="green" />} headingLevel="h2" />
+        <EmptyStateHeader
+          titleText={<>{intl.formatMessage(messages.costModelsWizardReviewStatusTitle)}</>}
+          icon={<EmptyStateIcon icon={OkIcon} color="green" />}
+          headingLevel="h2"
+        />
         <EmptyStateBody>
           {intl.formatMessage(messages.costModelsWizardReviewStatusSubTitle, { value: name })}
-        </EmptyStateBody><EmptyStateFooter>
-        <EmptyStateActions>
-          <Button variant="link" onClick={onClose}>
-            {intl.formatMessage(messages.close)}
-          </Button>
-        </EmptyStateActions>
-      </EmptyStateFooter></EmptyState>
+        </EmptyStateBody>
+        <EmptyStateFooter>
+          <EmptyStateActions>
+            <Button variant="link" onClick={onClose}>
+              {intl.formatMessage(messages.close)}
+            </Button>
+          </EmptyStateActions>
+        </EmptyStateFooter>
+      </EmptyState>
     )}
   </CostModelContext.Consumer>
 );

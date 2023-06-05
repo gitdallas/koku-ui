@@ -1,6 +1,7 @@
 import type { PaginationProps } from '@patternfly/react-core';
 import {
   InputGroup,
+  InputGroupItem,
   InputGroupText,
   Pagination,
   TextInput,
@@ -8,7 +9,7 @@ import {
   ToolbarContent,
   ToolbarFilter,
   ToolbarItem,
-  ToolbarToggleGroup, InputGroupItem,
+  ToolbarToggleGroup,
 } from '@patternfly/react-core';
 import { FilterIcon } from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { SearchIcon } from '@patternfly/react-icons/dist/esm/icons/search-icon';
@@ -28,18 +29,20 @@ interface FilterInputProps {
 const FilterInput: React.FC<FilterInputProps> = ({ id, placeholder = '', value, onChange, onSearch }) => {
   return (
     <InputGroup>
-      <InputGroupItem isFill ><TextInput
-        value={value}
-        placeholder={placeholder}
-        id={id}
-        onChange={(event, value) => onChange(value, event)}
-        onKeyPress={(evt: React.KeyboardEvent<HTMLInputElement>) => {
-          if (evt.key !== 'Enter' || value === '') {
-            return;
-          }
-          onSearch(evt);
-        }}
-      /></InputGroupItem>
+      <InputGroupItem isFill>
+        <TextInput
+          value={value}
+          placeholder={placeholder}
+          id={id}
+          onChange={(event, value) => onChange(value, event)}
+          onKeyPress={(evt: React.KeyboardEvent<HTMLInputElement>) => {
+            if (evt.key !== 'Enter' || value === '') {
+              return;
+            }
+            onSearch(evt);
+          }}
+        />
+      </InputGroupItem>
       <InputGroupText style={{ borderLeft: '0' }}>
         <SearchIcon />
       </InputGroupText>

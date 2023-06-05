@@ -1,4 +1,4 @@
-import { EmptyState, EmptyStateBody, EmptyStateVariant, Spinner, EmptyStateHeader } from '@patternfly/react-core';
+import { EmptyState, EmptyStateBody, EmptyStateHeader, EmptyStateVariant, Spinner } from '@patternfly/react-core';
 import { intl as defaultIntl } from 'components/i18n';
 import messages from 'locales/messages';
 import React from 'react';

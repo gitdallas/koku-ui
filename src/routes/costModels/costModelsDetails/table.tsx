@@ -1,6 +1,15 @@
 import { PageSection, PageSectionVariants } from '@patternfly/react-core';
 import type { ICell, IRowData, ThProps } from '@patternfly/react-table';
-import { ActionsColumn, Table /* data-codemods */, TableVariant, Tbody, Td, Th, Thead, Tr } from '@patternfly/react-table';
+import {
+  ActionsColumn,
+  Table /* data-codemods */,
+  TableVariant,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  Tr,
+} from '@patternfly/react-table';
 import { sortable, TableGridBreakpoint } from '@patternfly/react-table';
 import type { CostModel } from 'api/costModels';
 import { intl as defaultIntl } from 'components/i18n';
